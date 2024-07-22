@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Asap', sans-serif;
+    src: url("./Assets/Fontes/Asap-Italic-VariableFont_wdth,wght.ttf") format('ttf');
+    font-style: italic;
+
+}
+@font-face {
+    font-family: 'Asap', sans-serif;
+    src: url("./Assets/Fontes/Asap-VariableFont_wdth,wght.ttf") format('ttf');
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'Kanit', sans-serif;
+    src: url("./Assets/Fontes/Kanit-Medium.ttf") format('ttf');
+    font-weight: normal;
+
+}
+@font-face {
+    font-family: 'Kanit', sans-serif;
+    src: url("./Assets/Fontes/Kanit-SemiBold.ttf") format('ttf');
+    font-weight: bold;
+
+}
+@font-face {
+    font-family: 'Source Code Pro';
+    src: url(../Assets/Fonts/SourceCodePro-VariableFont_wght.ttf) format('ttf');
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@property --myColor1 {
+    syntax: '<color>';
+    initial-value: #61D057;
+    inherits: false;
+}
+@property --myColor2 {
+    syntax: '<color>';
+    initial-value: #62DBD2  ;
+    inherits: false;
+}
+@property --myColor3 {
+    syntax: '<color>';
+    initial-value: #4176FF;
+    inherits: false;
+}
+
+
+/* Estilização global */
+body {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0px;
+}
+@media screen and (max-width: 720px) {
+    body {
+        font-size: 16px;
+    }
+}    
+
+/* Estilização da barra de navegação */
+.navbar {
+    background: linear-gradient(90deg, var(--myColor1), var(--myColor2), var(--myColor3));
+    height: 64px;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    
+    img {
+        height: 44px;
+        margin: 6px 6px 6px 16px;
+    }
+    div {
+        margin: auto;
+        align-self: center;
+    
+        span {
+            font-size: 64px;
+        }
+    }
+}
+@media screen and (max-width: 720px) {
+    .navbar {
+        height: 48px;
+
+        img {
+            height: 44px;
+            margin: 6px 6px 6px 16px;
+        }
+        div span {
+            font-size: 24px;
+        }
+    }
+}
