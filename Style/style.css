@@ -129,6 +129,7 @@ body {
     .imagem.grande img {
         margin: 32px auto;
         height: 96px;
+        box-shadow: 0px 4px 16px -8px black;
     }
 }
 
@@ -207,6 +208,8 @@ body {
             margin: 16px auto;
             height: 36px;
             font-size: 16px;
+            box-shadow: 0px 4px 8px -4px black;
+            text-shadow: 0px 1px 1px rgb(62, 62, 62);
 
             span{
                 margin: auto 24px auto 24px;
