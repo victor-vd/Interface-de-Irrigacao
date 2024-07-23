@@ -219,18 +219,19 @@ body {
     }  
 }
 @media screen and (max-width: 720px) { 
-    .buttons {
-        a {
-            margin: 16px auto;
-            height: 36px;
-            font-size: 16px;
-            box-shadow: 0px 4px 8px -4px black;
-            text-shadow: 0px 1px 1px rgb(62, 62, 62);
+    .button {
+        margin: 16px auto;
+        height: 36px;
+        font-size: 16px;
+        box-shadow: 0px 4px 8px -4px black;
+        text-shadow: 0px 1px 1px rgb(62, 62, 62);
 
-            span{
-                margin: auto 24px auto 24px;
-            }
-        }    
+        span{
+            margin: auto 24px auto 24px;
+        }
+    }
+    .buttonZ {
+        margin: 48px auto 24px auto;
     }
 }
 
@@ -262,11 +263,11 @@ body {
     }
 }
 @media screen and (max-width: 720px) { 
-    .float{
+    .botaoFlutuante{
         width:48px;
         height:48px;
-        bottom:16px;
-        right:16px;   
+        bottom:4%;
+        right:8%;   
         img{
             height: 32px;
             margin-top: 8px;
@@ -287,6 +288,9 @@ body {
     display: none;
 
     .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
         background-color: white;
         position: fixed;
         top: 50%;
@@ -301,23 +305,23 @@ body {
         height: 500px;
         font-weight: bolder;
 
-        button {
-            display: block;
-            margin: 50% auto;
+        .tituloJanela {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            top: 0;
+            margin: 32px auto auto auto;
+            font-size: 32px;
+            text-shadow: 1px 2px 4px rgb(193, 193, 193);
+            color: #0fb900;
+        }
+        .button {
+            margin: auto auto 32px auto;
         }
     }
 }
 .show {
     display: block;
-}
-.tituloJanela {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    margin: 16px auto 64px auto;
-    font-size: 32px;
-    text-shadow: 1px 2px 4px rgb(193, 193, 193);
-    color: #0fb900;
 }
 @media screen and (max-width: 720px) { 
     .popup {
@@ -330,6 +334,9 @@ body {
     
         .content {
             position: fixed;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
             top: 50%;
             left: 50%;
             margin-left: -160px;
@@ -337,16 +344,22 @@ body {
             padding: 20px;
             border: 1px solid #888888;
             box-shadow: 4px 8px 32px -16px black;
-            border-radius: 40px;
+            border-radius: 32px;
             width: 280px;
             height: 400px;
+            
     
-            button {
-                display: block;
-                margin: 50% auto;
+            .tituloJanela {
+                top: 0;
+                margin: 32px auto auto auto;
+                font-size: 24px;
+            }
+            .button {
+                margin: auto auto 32px auto;
             }
         }
     }
+
     .show {
         display: block;
     }
