@@ -122,7 +122,7 @@ body {
     justify-content: center;
     flex-direction: row;
     border-radius: 100%;
-    margin: 32px auto;
+    margin: 24px auto;
     height: 128px;
     box-shadow: 0px 4px 32px -12px black;
 }
@@ -133,12 +133,19 @@ body {
         box-shadow: 0px 4px 16px -8px black;
     }
 }
+@media screen and (max-width: 380px) { 
+    .imagem.grande img {
+        margin: 16px auto;
+        height: 72px;
+        box-shadow: 0px 4px 16px -8px black;
+    }
+}
 
 .titulo {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin: 16px auto 64px auto;
+    margin: 16px auto 32px auto;
     font-size: 32px;
     text-shadow: 1px 2px 4px rgb(193, 193, 193);
     color: #0fb900;
@@ -147,6 +154,12 @@ body {
     .titulo {
         margin: 16px auto 32px auto;
         font-size: 28px;
+    }
+}
+@media screen and (max-width: 380px) { 
+    .titulo {
+        margin: 16px auto 16px auto;
+        font-size: 24px;
     }
 }
 
@@ -162,14 +175,143 @@ body {
 }
 @media screen and (max-width: 720px) { 
     .subtitulo {
-        margin: 16px auto 32px auto;
+        margin: 16px auto 16px auto;
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 380px) { 
+    .subtitulo {
+        margin: 16px auto 16px auto;
         font-size: 20px;
     }
 }
 
+.botoesPainel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .botoesColuna1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto 16px;
+    }
+    .botoesColuna2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: auto 16px;
+    }
+}
+.botaoPainel{
+    background: linear-gradient(90deg, var(--verde), var(--ciano));
+    transition: --verde 0.2s, --ciano 0.2s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: none;
+    box-shadow: 0px 4px 12px -4px black;
+    text-shadow: 0px 1px 2px rgb(62, 62, 62);
+    border-radius: 16px;
+    margin: 16px auto;
+    height: 72px;
+    width: 240px;
+    font-size: 20px;
+    font-family: inherit;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+
+    img{
+        height: 48px;
+        margin: auto 0 auto 8px;
+    }
+    &:hover {
+        --verde: #11d000;
+        --ciano: #00ffee;
+        transition: --verde 0.5s, --ciano 0.5s;
+    } 
+    &:active {
+        --verde: #61D057;
+        --ciano: #62db78;
+        transition: --verde 0.1s, --ciano 0.1s;
+    }    
+    span{
+        margin: auto auto 14px auto;
+    }
+}
+@media screen and (max-width: 720px) {
+    .botoesPainel {
+        .botoesColuna1 {
+            margin: auto 8px;
+        }
+        .botoesColuna2 {
+            margin: 8px;
+        }
+    }
+    .botaoPainel{
+        margin: 8px auto;
+        height: 128px;
+        width: 156px;
+        font-size: 20px;
+    
+        img{
+            height: 48px;
+            margin: 12px auto auto auto;
+        }
+        span{
+            margin: auto auto 12px auto;
+        }
+    }
+}
+@media screen and (max-width: 380px) {
+    .botoesPainel {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    
+        .botoesColuna1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: auto 8px;
+        }
+        .botoesColuna2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 8px;
+        }
+    }
+    .botaoPainel{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 16px;
+        margin: 8px auto;
+        height: 106px;
+        width: 156px;
+        font-size: 18px;
+        font-family: inherit;
+        font-weight: 600;
+        color: white;
+        cursor: pointer;
+    
+        img{
+            height: 36px;
+            margin: 8px auto auto auto;
+        }
+        span{
+            margin: auto auto 12px auto;
+        }
+    }
+}
+
+
 
 /* Estilização dos botões */
-.button {
+.botao {
     background: linear-gradient(90deg, var(--verde), var(--ciano));
     transition: --verde 0.2s, --ciano 0.2s;
     display: flex;
@@ -202,10 +344,9 @@ body {
         margin: auto 24px 14px 24px;
     }
 }    
-.buttonZ {
+.botaoZ {
     background: linear-gradient(90deg, var(--vermelho), var(--laranja));
     transition: --laranja 0.2s, --vermelho 0.2s;
-    margin: 64px auto 24px auto;
 
     &:hover {
         --vermelho: #ff4511;
@@ -219,7 +360,7 @@ body {
     }  
 }
 @media screen and (max-width: 720px) { 
-    .button {
+    .botao {
         margin: 16px auto;
         height: 36px;
         font-size: 16px;
@@ -229,9 +370,6 @@ body {
         span{
             margin: auto 24px auto 24px;
         }
-    }
-    .buttonZ {
-        margin: 48px auto 24px auto;
     }
 }
 
@@ -315,7 +453,7 @@ body {
             text-shadow: 1px 2px 4px rgb(193, 193, 193);
             color: #0fb900;
         }
-        .button {
+        .botao {
             margin: auto auto 32px auto;
         }
     }
@@ -354,7 +492,7 @@ body {
                 margin: 32px auto auto auto;
                 font-size: 24px;
             }
-            .button {
+            .botao {
                 margin: auto auto 32px auto;
             }
         }
@@ -373,10 +511,3 @@ body {
         color: #0fb900;
     }
 }
-
-
-
-
-
-
-
