@@ -403,6 +403,18 @@ body {
 }
 @media screen and (max-width: 720px) { 
     .botaoFlutuante{
+        width:54px;
+        height:54px;
+        bottom:4%;
+        right:8%;   
+        img{
+            height: 36px;
+            margin-top: 9px;
+        }
+    }
+}
+@media screen and (max-width: 380px) { 
+    .botaoFlutuante{
         width:48px;
         height:48px;
         bottom:4%;
