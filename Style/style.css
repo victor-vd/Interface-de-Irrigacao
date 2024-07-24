@@ -251,6 +251,7 @@ body {
         }
     }
     .botaoPainel{
+        flex-direction: column;
         margin: 8px auto;
         height: 128px;
         width: 156px;
