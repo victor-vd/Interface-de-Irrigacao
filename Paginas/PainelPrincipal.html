@@ -7,9 +7,16 @@
     <title>PainelPrincipal</title>
 </head>
 <body>
-    <nav class="navbar"></nav>
+    <nav class="navbar">    
+        <a href="PainelPrincipal.html"><img class="imagem" src="../Assets/Imagens/LogoIrrigacao (64x64).png" alt=""></a>
+        <div class="titulo">
+            <span>
+                I-RRIGA
+            </span>
+        </div>
+        <span class="imagem"></span>
+    </nav>
     <div class="imagem grande">
-        <img src="../Assets/Imagens/LogoIrrigacao (128x128).png" alt="">
     </div>
 
     <div class="titulo">
@@ -17,19 +24,19 @@
             Painel Principal
         </span>
     </div>
-    <div class="botoesPainel">
+    <div class="botoesPainel" id="botoesPainel">
         <div class="botoesColuna1">
             <div name="CicloDiario">
                 <button id="botaoCicloDiario" class="botaoPainel">
                     <img src="../Assets/Imagens/routine_white (64x64).png" alt="">
                     <span>
-                        Ativar o<br>Ciclo Diário
+                        Ciclo Diário
                     </span>    
                 </button>
                 <div id="janelaCicloDiario" class="popup">
                     <div class="content">
                         <h1 class="tituloJanela">
-                            Ativar o Ciclo Diário
+                            Ciclo Diário
                         </h1>
                         <div class="subtitulo">
                             texto
@@ -46,7 +53,7 @@
                 <button id="botaoAspersorIndiv" class="botaoPainel">
                     <img src="../Assets/Imagens/sprinkler_white (64x64).png" alt="">
                     <span>
-                        Ativar Aspersor<br>Individual
+                        Aspersor<br>Individual
                     </span>    
                 </button>
                 <div id="janelaAspersorIndiv" class="popup">
@@ -77,7 +84,7 @@
                 <button id="botaoRotinaTeste" class="botaoPainel">
                     <img src="../Assets/Imagens/search_white (64x64).png" alt="">
                     <span>
-                        Executar Rotina<br>de Teste
+                        Rotina<br>de Teste
                     </span>    
                 </button>
                 <div id="janelaRotinaTeste" class="popup">
@@ -100,7 +107,7 @@
                 <button id="botaoLigaTorneira" class="botaoPainel">
                     <img src="../Assets/Imagens/water-faucet_white (64x64).png" alt="">
                     <span>
-                        Ligar<br>Torneiras
+                        Torneiras
                     </span>    
                 </button>
                 <div id="janelaLigaTorneira" class="popup">
@@ -123,7 +130,7 @@
                 <button id="botaoInfoSistema" class="botaoPainel">
                     <img src="../Assets/Imagens/information_white (64x64).png" alt="">
                     <span>
-                        Informações<br>do Sistema
+                        Sistema
                     </span>    
                 </button>
                 <div id="janelaInfoSistema" class="popup">
@@ -167,7 +174,6 @@
     </div>
     </div>
 
-<script src="../Scripts/inject.js"></script>
 <script src="../Scripts/window.js"></script>
 </body>
 </html>

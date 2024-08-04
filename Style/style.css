@@ -145,21 +145,21 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin: 16px auto 32px auto;
-    font-size: 32px;
-    text-shadow: 1px 2px 4px rgb(193, 193, 193);
-    color: #0fb900;
+    margin: 64px auto 32px auto;
+    font-size: 36px;
+    text-shadow: 1px 2px 4px rgb(213, 213, 213);
+    color: #11d000;
 }
 @media screen and (max-width: 720px) { 
     .titulo {
-        margin: 16px auto 32px auto;
-        font-size: 28px;
+        margin: 64px auto 32px auto;
+        font-size: 32px;
     }
 }
 @media screen and (max-width: 380px) { 
     .titulo {
-        margin: 16px auto 16px auto;
-        font-size: 24px;
+        margin: 48px auto 16px auto;
+        font-size: 28px;
     }
 }
 
@@ -169,7 +169,7 @@ body {
     flex-direction: row;
     margin: 16px auto 64px auto;
     font-size: 24px;
-    text-shadow: 1px 2px 4px rgb(193, 193, 193);
+    text-shadow: 1px 2px 4px rgb(185, 185, 185);
     color: black;
 
 }
@@ -209,23 +209,24 @@ body {
     transition: --verde 0.2s, --ciano 0.2s;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     border: none;
     box-shadow: 0px 4px 12px -4px black;
     text-shadow: 0px 1px 2px rgb(62, 62, 62);
     border-radius: 16px;
     margin: 16px auto;
-    height: 72px;
-    width: 240px;
-    font-size: 20px;
+    height: 108px;
+    width: 312px;
+    font-size: 28px;
     font-family: inherit;
     font-weight: 600;
     color: white;
     cursor: pointer;
 
     img{
-        height: 48px;
-        margin: auto 0 auto 8px;
+        height: 64px;
+        margin: auto 24px auto 24px;
     }
     &:hover {
         --verde: #11d000;
@@ -238,9 +239,16 @@ body {
         transition: --verde 0.1s, --ciano 0.1s;
     }    
     span{
-        margin: auto auto 14px auto;
+
+        line-height: 25px;
+        margin: auto 42px auto 0px;
     }
+    &#botaoRotinaTeste {span{margin: auto 60px auto 0px;}}
+    &#botaoCicloDiario {span{margin: auto 30px auto 0px;}}
+    &#botaoLigaTorneira {span{margin: auto 56px auto 0px;}}
+    &#botaoInfoSistema {span{margin: auto 64px auto 0px;}}
 }
+
 @media screen and (max-width: 720px) {
     .botoesPainel {
         .botoesColuna1 {
@@ -253,17 +261,21 @@ body {
     .botaoPainel{
         flex-direction: column;
         margin: 8px auto;
-        height: 128px;
-        width: 156px;
-        font-size: 20px;
+        height: 156px;
+        width: 168px;
+        font-size: 26px;
     
         img{
-            height: 48px;
-            margin: 12px auto auto auto;
+            height: 56px;
+            margin: 20px auto auto auto;
         }
         span{
-            margin: auto auto 12px auto;
+            margin: auto auto 20px auto;
         }
+        &#botaoRotinaTeste {span{margin: auto auto 20px auto;}}
+        &#botaoCicloDiario {span{margin: auto auto 30px auto;}}
+        &#botaoLigaTorneira {span{margin: auto auto 30px auto;}}
+        &#botaoInfoSistema {span{margin: auto auto 30px auto;}}
     }
 }
 @media screen and (max-width: 380px) {
@@ -288,25 +300,30 @@ body {
     .botaoPainel{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         border-radius: 16px;
         margin: 8px auto;
-        height: 106px;
+        height: 140px;
         width: 156px;
-        font-size: 18px;
+        font-size: 22px;
         font-family: inherit;
         font-weight: 600;
         color: white;
         cursor: pointer;
     
         img{
-            height: 36px;
-            margin: 8px auto auto auto;
+            height: 48px;
+            margin: 16px auto auto auto;
         }
         span{
-            margin: auto auto 12px auto;
+            margin: auto auto 16px auto;
         }
+        &#botaoRotinaTeste {span{margin: auto auto 16px auto;}}
+        &#botaoCicloDiario {span{margin: auto auto 24px auto;}}
+        &#botaoLigaTorneira {span{margin: auto auto 24px auto;}}
+        &#botaoInfoSistema {span{margin: auto auto 24px auto;}}
     }
+
 }
 
 
@@ -490,13 +507,13 @@ body {
             flex-direction: column;
             top: 50%;
             left: 50%;
-            margin-left: -160px;
+            margin-left: -180px;
             margin-top: -220px;
             padding: 20px;
             border: 1px solid #888888;
             box-shadow: 4px 8px 32px -16px black;
-            border-radius: 32px;
-            width: 280px;
+            border-radius: 28px;
+            width: 320px;
             height: 400px;
             
     
@@ -522,5 +539,55 @@ body {
         font-size: 20px;
         text-shadow: 1px 2px 4px rgb(193, 193, 193);
         color: #0fb900;
+    }
+    @media screen and (max-width: 380px) { 
+        .popup {
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        
+            .content {
+                position: fixed;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                top: 50%;
+                left: 50%;
+                margin-left: -166px;
+                margin-top: -220px;
+                padding: 20px;
+                border: 1px solid #888888;
+                box-shadow: 4px 8px 32px -16px black;
+                border-radius: 24px;
+                width: 292px;
+                height: 400px;
+                
+        
+                .tituloJanela {
+                    top: 0;
+                    margin: 32px auto auto auto;
+                    font-size: 24px;
+                }
+                .botao {
+                    margin: auto auto 32px auto;
+                }
+            }
+        }
+    
+        .show {
+            display: block;
+        }
+        .tituloJanela {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin: 16px auto 64px auto;
+            font-size: 20px;
+            text-shadow: 1px 2px 4px rgb(193, 193, 193);
+            color: #0fb900;
+        }
     }
 }
