@@ -7,7 +7,7 @@ function botaoPainel(id){
 }
 
 function fecharPainel(id){
-    document.querySelector(`#${id}`).parentElement.parentElement.classList.remove("show");
+    document.querySelector(`#${id}`).parentElement.parentElement.parentElement.classList.remove("show");
 }
 
 window.addEventListener("click", function (event) {
