@@ -134,12 +134,8 @@
 /* Estilização da janela de pop-up */
 @media screen and (max-width: 720px) { 
     .popup .content {
-            position: fixed;
-            margin-left: -180px;
-            margin-top: -220px;
             border-radius: 28px;
             width: 320px;
-            height: 400px;
             
     
             .tituloJanela {
@@ -147,17 +143,17 @@
                 margin: 32px auto auto auto;
                 font-size: 26px;
             }
+            .subtitulo {
+                margin: 64px auto 32px auto;
+            }
             .botao {
-                margin: auto 16px 32px 16px;
+                margin: 32px 16px 32px 16px;
             }
         }
     @media screen and (max-width: 380px) { 
         .popup .content {
-            margin-left: -166px;
-            margin-top: -220px;
             border-radius: 24px;
             width: 292px;
-            height: 400px;
         }
         .tituloJanela {
             top: 0;

@@ -38,6 +38,12 @@
     initial-value: #ff3700;
     inherits: false;
 }
+@property --tamanho-popup {
+    initial-value: 10000;
+}
+@property --margin-popup {
+    initial-value: 0;
+}
 
 
 /* Estilização global */
@@ -231,21 +237,26 @@ body {
     display: none;
 
     .content {
+        --tamanho-popup: fit-content;
+        --margin-popup: calc((var(--tamanho-popup)/2)-2220);
         display: flex;
         justify-content: center;
         flex-direction: column;
         background-color: white;
-        position: fixed;
-        top: 50%;
+        position:fixed;
         left: 50%;
-        margin-left: -270px;
-        margin-top: -270px;
+        top: 50%;
+        -ms-transform: translate(-50%,-50%);
+        -moz-transform:translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
         padding: 20px;
         border: 1px solid #888888;
         box-shadow: 4px 8px 32px -16px black;
         border-radius: 40px;
         width: 500px;
         height: 500px;
+        height: var(--tamanho-popup);
         font-weight: bolder;
 
         .tituloJanela {
@@ -258,8 +269,11 @@ body {
             text-shadow: 1px 2px 4px rgb(193, 193, 193);
             color: #0fb900;
         }
+        .subtitulo {
+            margin: 64px auto 32px auto;
+        }
         .botao {
-            margin: auto 20px 32px 20px;
+            margin: 32px 20px 32px 20px;
         }
     }
 }
