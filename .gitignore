@@ -1,1 +1,4 @@
 1ignorar/
+.vscode/
+
+.gitignore

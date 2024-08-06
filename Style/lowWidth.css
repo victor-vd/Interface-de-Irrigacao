@@ -1,0 +1,192 @@
+/* Estilização global */
+@media screen and (max-width: 720px) {
+    body {
+        font-size: 16px;
+    }
+}    
+
+/* Estilização da barra de navegação */
+@media screen and (max-width: 720px) {
+    .navbar {
+        height: 48px;
+
+        .imagem {
+            height: 36px;
+            width: 36px;
+            margin: 6px 6px 6px 16px;
+        }
+        div {
+            margin: auto auto 12px auto;
+            span {
+                font-size: 24px;
+                text-shadow: 0.5px 1.5px 2px rgb(60, 60, 60);
+            }   
+        }
+    }
+}
+
+/* Estilização do titulo */
+@media screen and (max-width: 720px) { 
+    .titulo {
+        font-size: 32px;
+    }
+	@media screen and (max-width: 380px) { 
+		.titulo {
+			margin: 48px auto 16px auto;
+			font-size: 28px;
+		}
+	}
+}
+
+
+/* Estilização do subtitulo */
+@media screen and (max-width: 720px) { 
+    .subtitulo {
+        margin: 16px auto 16px auto;
+        font-size: 22px;
+    }
+	@media screen and (max-width: 380px) { 
+		.subtitulo {
+			font-size: 20px;
+		}
+	}
+}
+
+/* Estilização dos botões do painel */
+@media screen and (max-width: 720px) {
+    .botoesPainel {
+        .botoesColuna1 {
+            margin: auto 8px;
+        }
+        .botoesColuna2 {
+            margin: 8px;
+        }
+		.botaoPainel{
+			flex-direction: column;
+			margin: 8px auto;
+			height: 156px;
+			width: 168px;
+			font-size: 26px;
+    
+			img{
+				height: 56px;
+				margin: 20px auto auto auto;
+			}
+			span{
+				margin: auto auto 20px auto;
+			}
+			&#botaoRotinaTeste {span{margin: auto auto 20px auto;}}
+			&#botaoCicloDiario {span{margin: auto auto 30px auto;}}
+			&#botaoLigaTorneira {span{margin: auto auto 30px auto;}}
+			&#botaoInfoSistema {span{margin: auto auto 30px auto;}}
+		}
+    }
+
+	@media screen and (max-width: 380px) {
+		.botoesPainel {
+			.botoesColuna1 {
+				margin: auto 8px;
+			}
+			.botoesColuna2 {
+				margin: 8px;
+			}
+			.botaoPainel{
+				height: 140px;
+				width: 156px;
+				font-size: 22px;
+			
+				img{
+					height: 48px;
+					margin: 16px auto auto auto;
+				}
+				span{
+					margin: auto auto 16px auto;
+				}
+				&#botaoRotinaTeste {span{margin: auto auto 16px auto;}}
+				&#botaoCicloDiario {span{margin: auto auto 24px auto;}}
+				&#botaoLigaTorneira {span{margin: auto auto 24px auto;}}
+				&#botaoInfoSistema {span{margin: auto auto 24px auto;}}
+			}
+		}
+	}
+}
+
+
+
+/* Estilização dos botões */
+@media screen and (max-width: 720px) { 
+    .botoes{
+        /* */         
+    }
+    .botao {
+        margin: 16px auto;
+        height: 36px;
+        font-size: 16px;
+        box-shadow: 0px 4px 8px -4px black;
+        text-shadow: 0px 1px 1px rgb(62, 62, 62);
+
+        span{
+            margin: auto 24px auto 24px;
+        }
+    }
+}
+
+/* Estilização da janela de pop-up */
+@media screen and (max-width: 720px) { 
+    .popup .content {
+            position: fixed;
+            margin-left: -180px;
+            margin-top: -220px;
+            border-radius: 28px;
+            width: 320px;
+            height: 400px;
+            
+    
+            .tituloJanela {
+                top: 0;
+                margin: 32px auto auto auto;
+                font-size: 26px;
+            }
+            .botao {
+                margin: auto 16px 32px 16px;
+            }
+        }
+    @media screen and (max-width: 380px) { 
+        .popup .content {
+            margin-left: -166px;
+            margin-top: -220px;
+            border-radius: 24px;
+            width: 292px;
+            height: 400px;
+        }
+        .tituloJanela {
+            top: 0;
+            margin: 32px auto auto auto;
+            font-size: 24px;
+        }
+    }
+}
+
+/* Estilização do botões de configurações flutuante */
+@media screen and (max-width: 720px) { 
+    .botaoFlutuante{
+        width:54px;
+        height:54px;
+        bottom:4%;
+        right:8%;   
+        img{
+            height: 36px;
+            margin-top: 9px;
+        }
+    }
+	@media screen and (max-width: 380px) { 
+		.botaoFlutuante{
+			width:48px;
+			height:48px;
+			img{
+				height: 32px;
+				margin-top: 8px;
+			}
+		}
+	}
+}
