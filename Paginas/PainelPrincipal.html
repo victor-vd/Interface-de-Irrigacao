@@ -43,14 +43,14 @@
                             Deseja iniciar o ciclo diário?
                         </div>
                         <div class="botoes">
-                            <button id="iniciarCicloDiario" onclick="fecharPainel(id)" class="botao">
-                                <span>
-                                    Sim
-                                </span>
-                            </button>
                             <button id="fecharCicloDiario" onclick="fecharPainel(id)" class="botao">
                                 <span>
-                                        Não
+                                    Não
+                                </span>
+                            </button>
+                            <button id="iniciarCicloDiario" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                        Sim
                                 </span>
                             </button>
                         </div>
@@ -70,12 +70,27 @@
                             Ativar Aspersor Individual
                         </h1>
                         <div class="subtitulo">
-                            bsethe
+                            Informe os dados dos Aspersores
                         </div>  
+                        <div class="inputPopup">
+                            <div>
+                                <span>Nome do Aspersor:</span>
+                                <input id="nomeAspersor" type="text">
+                            </div>
+                            <div>
+                                <span>Número de ciclos:</span>
+                                <input id="cicloAspersor" type="number" maxlength="1">
+                            </div>
+                        </div>
                         <div class="botoes">
                             <button id="fecharAspersorIndiv" onclick="fecharPainel(id)" class="botao">
                                 <span>
                                     Voltar
+                                </span>
+                            </button>
+                            <button id="acionarAspersorIndiv" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Iniciar
                                 </span>
                             </button>
                         </div>
