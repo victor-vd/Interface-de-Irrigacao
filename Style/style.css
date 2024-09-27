@@ -1,58 +1,73 @@
 @font-face {
-    font-family: 'Asap', sans-serif;
-    src: url("./Assets/Fontes/Asap-Italic-VariableFont_wdth,wght.ttf") format('ttf');
-    font-style: italic;
-
-}
-@font-face {
-    font-family: 'Asap', sans-serif;
-    src: url("./Assets/Fontes/Asap-VariableFont_wdth,wght.ttf") format('ttf');
+    font-family: 'asapregular';
+    src: url('../Assets/Fontes/asap-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('../Assets/Fontes/asap-variablefont_wdthwght-webfont.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 
 }
 @font-face {
-    font-family: 'Kanit', sans-serif;
-    src: url("./Assets/Fontes/Kanit-Medium.ttf") format('ttf');
+    font-family: 'asapitalic';
+    src: url('../Assets/Fontes/asap-italic-variablefont_wdthwght-webfont.woff2') format('woff2'),
+         url('../Assets/Fontes/asap-italic-variablefont_wdthwght-webfont.woff') format('woff');
     font-weight: normal;
+    font-style: normal;
 
 }
 @font-face {
-    font-family: 'Kanit', sans-serif;
-    src: url("./Assets/Fontes/Kanit-SemiBold.ttf") format('ttf');
-    font-weight: bold;
+    font-family: 'kanitmedium';
+    src: url('../Assets/Fontes/kanit-medium-webfont.woff2') format('woff2'),
+         url('../Assets/Fontes/kanit-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
 }
 @font-face {
-    font-family: 'Source Code Pro';
-    src: url(../Assets/Fonts/SourceCodePro-VariableFont_wght.ttf) format('ttf');
+    font-family: 'kanitsemibold';
+    src: url('../Assets/Fontes/kanit-semibold-webfont.woff2') format('woff2'),
+         url('../Assets/Fontes/kanit-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
-@property --myColor1 {
+@property --verde {
     syntax: '<color>';
     initial-value: #61D057;
     inherits: false;
 }
-@property --myColor2 {
+@property --ciano {
     syntax: '<color>';
     initial-value: #62DBD2  ;
     inherits: false;
 }
-@property --myColor3 {
+@property --azul {
     syntax: '<color>';
     initial-value: #4176FF;
+    inherits: false;
+}
+@property --laranja {
+    syntax: '<color>';
+    initial-value: #ff6f00;
+    inherits: false;
+}
+@property --vermelho {
+    syntax: '<color>';
+    initial-value: #ff3700;
     inherits: false;
 }
 
 
 /* Estilização global */
 body {
-    font-family: 'Source Code Pro', monospace;
+    font-family: 'asapregular', sans-serif;
     font-size: 24px;
     font-weight: bold;
     margin: 0px;
+    
+    a {
+        text-decoration: none;
+    }
 }
 @media screen and (max-width: 720px) {
     body {
@@ -62,22 +77,24 @@ body {
 
 /* Estilização da barra de navegação */
 .navbar {
-    background: linear-gradient(90deg, var(--myColor1), var(--myColor2), var(--myColor3));
+    background: linear-gradient(90deg, var(--verde), var(--ciano), var(--azul));
     height: 64px;
     display: flex;
     justify-content: left;
     align-items: flex-start;
+    margin-bottom: 32px;
     
-    img {
+    .imagem {
         height: 44px;
-        margin: 6px 6px 6px 16px;
+        width: 44px;
+        margin: 10px 6px 10px 16px;
     }
     div {
-        margin: auto;
-        align-self: center;
-    
+        margin: auto auto 17px auto;
         span {
-            font-size: 64px;
+            color: white;
+            font-size: 32px;
+            text-shadow: 1px 2px 4px rgb(30, 30, 30);
         }
     }
 }
@@ -85,12 +102,155 @@ body {
     .navbar {
         height: 48px;
 
-        img {
-            height: 44px;
+        .imagem {
+            height: 36px;
+            width: 36px;
             margin: 6px 6px 6px 16px;
         }
-        div span {
-            font-size: 24px;
+        div {
+            margin: auto auto 12px auto;
+            span {
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.imagem.grande img {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 100%;
+    margin: 32px auto;
+    height: 128px;
+    box-shadow: 0px 4px 32px -12px black;
+}
+@media screen and (max-width: 720px) { 
+    .imagem.grande img {
+        margin: 32px auto;
+        height: 96px;
+    }
+}
+
+.subtitulo {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 16px auto 64px auto;
+    font-size: 32px;
+    text-decoration: underline;
+    text-shadow: 0px 0px 1px rgb(62, 62, 62);
+    color: var(--verde);
+
+}
+@media screen and (max-width: 720px) { 
+    .subtitulo {
+        margin: 16px auto 32px auto;
+        font-size: 24px;
+    }
+}
+
+
+/* Estilização dos botões */
+.buttons {
+    a {
+        background: linear-gradient(90deg, var(--verde), var(--ciano));
+        transition: --verde 0.2s, --ciano 0.2s;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        border: none;
+        box-shadow: 0px 4px 12px -4px black;
+        text-shadow: 0px 1px 2px rgb(62, 62, 62);
+        border-radius: 32px;
+        margin: 24px auto;
+        height: 48px;
+        width: fit-content;
+        font-size: 20px;
+        font-family: inherit;
+        font-weight: 600;
+        color: white;
+
+        &:hover {
+            --verde: #11d000;
+            --ciano: #00ffee;
+            transition: --verde 0.5s, --ciano 0.5s;
+        } 
+        &:active {
+            --verde: #61D057;
+            --ciano: #62db78;
+            transition: --verde 0.1s, --ciano 0.1s;
+        }    
+        span{
+            margin: auto 24px 14px 24px;
+        }
+    }    
+    .buttonZ {
+        background: linear-gradient(90deg, var(--vermelho), var(--laranja));
+        transition: --laranja 0.2s, --vermelho 0.2s;
+
+        &:hover {
+            --vermelho: #ff4511;
+            --laranja: #ff8800;
+            transition: --laranja 0.5s, --vermelho 0.5s;
+        } 
+        &:active {
+            --vermelho: #ff3700;
+            --laranja: #ff4000;
+            transition: --laranja 0.1s, --vermelho 0.1s;
+        }  
+    }
+}
+@media screen and (max-width: 720px) { 
+    .buttons {
+        a {
+            margin: 16px auto;
+            height: 36px;
+            font-size: 16px;
+
+            span{
+                margin: auto 24px auto 24px;
+            }
+        }    
+    }
+}
+
+.float{
+    background: linear-gradient(90deg, var(--verde), var(--ciano));
+    position:fixed;
+    width:64px;
+    height:64px;
+    bottom:40px;
+    right:40px;
+    color:#FFF;
+    border-radius:50px;
+    text-align:center;
+    box-shadow: 2px 2px 3px #999;
+
+    &:hover {
+        --verde: #11d000;
+        --ciano: #00ffee;
+        transition: --verde 0.5s, --ciano 0.5s;
+    } 
+    &:active {
+        --verde: #61D057;
+        --ciano: #62db78;
+        transition: --verde 0.1s, --ciano 0.1s;
+    }    
+    img{
+        height: 44px;
+        margin-top: 10px;
+    }
+}
+@media screen and (max-width: 720px) { 
+    .float{
+        width:48px;
+        height:48px;
+        bottom:16px;
+        right:16px;   
+        img{
+            height: 32px;
+            margin-top: 8px;
         }
     }
 }

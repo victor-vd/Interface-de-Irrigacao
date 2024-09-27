@@ -1,8 +1,9 @@
 document.querySelector("nav").innerHTML = `
-    <a href="PainelPrincipal.html"><img src="../Assets/Imagens/" alt=""></a>
+    <a href="PainelPrincipal.html"><img class="imagem" src="../Assets/Imagens/LogoIrrigacao (64x64).png" alt=""></a>
     <div class="titulo">
         <span>
             Sistema de Irrigação
         </span>
     </div>
+    <span class="imagem"></span>
 `;
