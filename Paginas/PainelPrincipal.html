@@ -8,53 +8,156 @@
 </head>
 <body>
     <nav class="navbar"></nav>
-    <div>
-        <div class="imagem grande">
-            <img src="../Assets/Imagens/LogoIrrigacao (128x128).png" alt="">
-        </div>
-        <div class="subtitulo">
-            <span>
-                Painel Principal
-            </span>
-        </div>
-        <div class="buttons">
-            <a href="">
+    <div class="imagem grande">
+        <img src="../Assets/Imagens/LogoIrrigacao (128x128).png" alt="">
+    </div>
+
+    <div class="titulo">
+        <span>
+            Painel Principal
+        </span>
+    </div>
+
+    <div class="buttons">
+        <div name="CicloDiario">
+            <button id="botaoCicloDiario" name="1" class="button">
                 <span>
                     Ativar o Ciclo Diário
                 </span>    
-            </a>
-            <a href="">
+            </button>
+            <div id="janelaCicloDiario" class="popup">
+                <div class="content">
+                    <h1 class="tituloJanela">
+                        Ativar o Ciclo Diário
+                    </h1>
+                    <div class="subtitulo">
+                        texto
+                    </div>
+                    <button id="fecharCicloDiario" class="button">
+                        <span>
+                            Voltar
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div name="AspersorIndiv">
+            <button id="botaoAspersorIndiv" name="2" class="button">
                 <span>
                     Ativar Aspersor Individual
                 </span>    
-            </a>
-            <a href="">
+            </button>
+            <div id="janelaAspersorIndiv" class="popup">
+                <div class="content">
+                    <h1 class="tituloJanela">
+                        Ativar Aspersor Individual
+                    </h1>
+                    <div class="subtitulo">
+                        bsethe
+                    </div>
+                    <button id="fecharAspersorIndiv" class="button">
+                        <span>
+                            Voltar
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div name="InfoSistema">
+            <button id="botaoInfoSistema" class="button">
                 <span>
                     Informações do Sistema
                 </span>    
-            </a>
-            <a href="">
+            </button>
+            <div id="janelaInfoSistema" class="popup">
+                <div class="content">
+                    <h1 class="tituloJanela">
+                        Informações do Sistema
+                    </h1>
+                    <div class="subtitulo">
+                        texto
+                    </div>
+                    <button id="fecharInfoSistema" class="button">
+                        <span>
+                            Voltar
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div name="RotinaTeste">
+            <button id="botaoRotinaTeste" class="button">
                 <span>
                     Executar Rotina de Teste
                 </span>    
-            </a>
-            <a href="">
+            </button>
+            <div id="janelaRotinaTeste" class="popup">
+                <div class="content">
+                    <h1 class="tituloJanela">
+                        Executar Rotina de Teste
+                    </h1>
+                    <div class="subtitulo">
+                        texto
+                    </div>
+                    <button id="fecharRotinaTeste" class="button">
+                        <span>
+                            Voltar
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div name="LigaTorneira">
+            <button id="botaoLigaTorneira" class="button">
                 <span>
                     Ligar Torneiras
                 </span>    
-            </a>
-            <a class="buttonZ" href="">
-                <span>
-                    Encerrar Atividades
-                </span>    
-            </a>
+            </button>
+            <div id="janelaLigaTorneira" class="popup">
+                <div class="content">
+                    <h1 class="tituloJanela">
+                        Ligar Torneiras
+                    </h1>
+                    <div class="subtitulo">
+                        texto
+                    </div>
+                    <button id="fecharLigaTorneira" class="button">
+                        <span>
+                            Voltar
+                        </span>
+                    </button>
+                </div>
+            </div>
         </div>
+        <button id="Desativa" class="button buttonZ" href="">
+            <span>
+                Encerrar Atividades
+            </span>    
+        </button>
     </div>
-    <div class="float">
-        <a href="">
+
+    <div name="Configuracoes" class="botaoFlutuante">
+        <a id="botaoConfiguracoes">
             <img src="../Assets/Imagens/Settings.png" alt="">
         </a>
+        <div id="janelaConfiguracoes" class="popup">
+            <div class="content">
+                <h1 class="tituloJanela">
+                    Configuracoes
+                </h1>
+                <div class="subtitulo">
+                    texto
+                </div>
+                <button id="fecharConfiguracoes" class="button">
+                    <span>
+                        Voltar
+                    </span>
+                </button>
+            </div>
+        </div>
     </div>
+
 <script src="../Scripts/inject.js"></script>
+<script src="../Scripts/window.js"></script>
 </body>
 </html>

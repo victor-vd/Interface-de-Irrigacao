@@ -111,7 +111,8 @@ body {
             margin: auto auto 12px auto;
             span {
                 font-size: 24px;
-            }
+                text-shadow: 0.5px 1.5px 2px rgb(60, 60, 60);
+            }   
         }
     }
 }
@@ -129,6 +130,23 @@ body {
     .imagem.grande img {
         margin: 32px auto;
         height: 96px;
+        box-shadow: 0px 4px 16px -8px black;
+    }
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 16px auto 64px auto;
+    font-size: 32px;
+    text-shadow: 1px 2px 4px rgb(193, 193, 193);
+    color: #0fb900;
+}
+@media screen and (max-width: 720px) { 
+    .titulo {
+        margin: 16px auto 32px auto;
+        font-size: 28px;
     }
 }
 
@@ -137,85 +155,87 @@ body {
     justify-content: center;
     flex-direction: row;
     margin: 16px auto 64px auto;
-    font-size: 32px;
-    text-decoration: underline;
-    text-shadow: 0px 0px 1px rgb(62, 62, 62);
-    color: var(--verde);
+    font-size: 24px;
+    text-shadow: 1px 2px 4px rgb(193, 193, 193);
+    color: black;
 
 }
 @media screen and (max-width: 720px) { 
     .subtitulo {
         margin: 16px auto 32px auto;
-        font-size: 24px;
+        font-size: 20px;
     }
 }
 
 
 /* Estilização dos botões */
-.buttons {
-    a {
-        background: linear-gradient(90deg, var(--verde), var(--ciano));
-        transition: --verde 0.2s, --ciano 0.2s;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        border: none;
-        box-shadow: 0px 4px 12px -4px black;
-        text-shadow: 0px 1px 2px rgb(62, 62, 62);
-        border-radius: 32px;
-        margin: 24px auto;
-        height: 48px;
-        width: fit-content;
-        font-size: 20px;
-        font-family: inherit;
-        font-weight: 600;
-        color: white;
+.button {
+    background: linear-gradient(90deg, var(--verde), var(--ciano));
+    transition: --verde 0.2s, --ciano 0.2s;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border: none;
+    box-shadow: 0px 4px 12px -4px black;
+    text-shadow: 0px 1px 2px rgb(62, 62, 62);
+    border-radius: 32px;
+    margin: 24px auto;
+    height: 48px;
+    width: fit-content;
+    font-size: 20px;
+    font-family: inherit;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
 
-        &:hover {
-            --verde: #11d000;
-            --ciano: #00ffee;
-            transition: --verde 0.5s, --ciano 0.5s;
-        } 
-        &:active {
-            --verde: #61D057;
-            --ciano: #62db78;
-            transition: --verde 0.1s, --ciano 0.1s;
-        }    
-        span{
-            margin: auto 24px 14px 24px;
-        }
+    &:hover {
+        --verde: #11d000;
+        --ciano: #00ffee;
+        transition: --verde 0.5s, --ciano 0.5s;
+    } 
+    &:active {
+        --verde: #61D057;
+        --ciano: #62db78;
+        transition: --verde 0.1s, --ciano 0.1s;
     }    
-    .buttonZ {
-        background: linear-gradient(90deg, var(--vermelho), var(--laranja));
-        transition: --laranja 0.2s, --vermelho 0.2s;
-
-        &:hover {
-            --vermelho: #ff4511;
-            --laranja: #ff8800;
-            transition: --laranja 0.5s, --vermelho 0.5s;
-        } 
-        &:active {
-            --vermelho: #ff3700;
-            --laranja: #ff4000;
-            transition: --laranja 0.1s, --vermelho 0.1s;
-        }  
+    span{
+        margin: auto 24px 14px 24px;
     }
+}    
+.buttonZ {
+    background: linear-gradient(90deg, var(--vermelho), var(--laranja));
+    transition: --laranja 0.2s, --vermelho 0.2s;
+    margin: 64px auto 24px auto;
+
+    &:hover {
+        --vermelho: #ff4511;
+        --laranja: #ff8800;
+        transition: --laranja 0.5s, --vermelho 0.5s;
+    } 
+    &:active {
+        --vermelho: #ff3700;
+        --laranja: #ff4000;
+        transition: --laranja 0.1s, --vermelho 0.1s;
+    }  
 }
 @media screen and (max-width: 720px) { 
-    .buttons {
-        a {
-            margin: 16px auto;
-            height: 36px;
-            font-size: 16px;
+    .button {
+        margin: 16px auto;
+        height: 36px;
+        font-size: 16px;
+        box-shadow: 0px 4px 8px -4px black;
+        text-shadow: 0px 1px 1px rgb(62, 62, 62);
 
-            span{
-                margin: auto 24px auto 24px;
-            }
-        }    
+        span{
+            margin: auto 24px auto 24px;
+        }
+    }
+    .buttonZ {
+        margin: 48px auto 24px auto;
     }
 }
 
-.float{
+.botaoFlutuante{
     background: linear-gradient(90deg, var(--verde), var(--ciano));
     position:fixed;
     width:64px;
@@ -243,14 +263,120 @@ body {
     }
 }
 @media screen and (max-width: 720px) { 
-    .float{
+    .botaoFlutuante{
         width:48px;
         height:48px;
-        bottom:16px;
-        right:16px;   
+        bottom:4%;
+        right:8%;   
         img{
             height: 32px;
             margin-top: 8px;
         }
     }
 }
+
+
+.popup {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+
+    .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: white;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: -270px;
+        margin-top: -270px;
+        padding: 20px;
+        border: 1px solid #888888;
+        box-shadow: 4px 8px 32px -16px black;
+        border-radius: 40px;
+        width: 500px;
+        height: 500px;
+        font-weight: bolder;
+
+        .tituloJanela {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            top: 0;
+            margin: 32px auto auto auto;
+            font-size: 32px;
+            text-shadow: 1px 2px 4px rgb(193, 193, 193);
+            color: #0fb900;
+        }
+        .button {
+            margin: auto auto 32px auto;
+        }
+    }
+}
+.show {
+    display: block;
+}
+@media screen and (max-width: 720px) { 
+    .popup {
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    
+        .content {
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            top: 50%;
+            left: 50%;
+            margin-left: -160px;
+            margin-top: -220px;
+            padding: 20px;
+            border: 1px solid #888888;
+            box-shadow: 4px 8px 32px -16px black;
+            border-radius: 32px;
+            width: 280px;
+            height: 400px;
+            
+    
+            .tituloJanela {
+                top: 0;
+                margin: 32px auto auto auto;
+                font-size: 24px;
+            }
+            .button {
+                margin: auto auto 32px auto;
+            }
+        }
+    }
+
+    .show {
+        display: block;
+    }
+    .tituloJanela {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: 16px auto 64px auto;
+        font-size: 20px;
+        text-shadow: 1px 2px 4px rgb(193, 193, 193);
+        color: #0fb900;
+    }
+}
+
+
+
+
+
+
+
