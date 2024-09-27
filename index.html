@@ -1,13 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <link rel="stylesheet" href="./Style/style.css">
+    <link rel="stylesheet" href="./Style/lowWidth.css">
+    <title>PainelPrincipal</title>
 </head>
 <body>
-    <script>
-        window.location.replace("Paginas/PainelPrincipal.html")
-    </script>
+    <nav class="navbar">    
+        <a href="index.html"><img class="imagem" src="./Imagens/logoIrriga64.png" alt=""></a>
+        <div class="titulo">
+            <span>
+                I-RRIGA
+            </span>
+        </div>
+        <span class="imagem"></span>
+    </nav>
+    <div class="imagem grande">
+    </div>
+
+    <div class="titulo">
+        <span>
+            Painel Principal
+        </span>
+    </div>
+
+    <div class="botoesPainel" id="botoesPainel">
+        <div class="botoesColuna1">
+            <div name="CicloDiario">
+                <button id="botaoCicloDiario" onclick="botaoPainel(id)" class="botaoPainel">
+                    <img src="./Imagens/routineWhite64.png" alt="">
+                    <span>
+                        Ciclo Diário
+                    </span>    
+                </button>
+                <div id="janelaCicloDiario" class="popup">
+                    <div class="content">
+                        <div class="tituloJanela">
+                            Deseja iniciar o ciclo diário?
+                        </div>
+                        <div class="botoes">
+                            <button id="fecharCicloDiario" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Não
+                                </span>
+                            </button>
+                            <button id="iniciarCicloDiario" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Sim
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div name="AspersorIndiv">
+                <button id="botaoAspersorIndiv" onclick="botaoPainel(id)" class="botaoPainel">
+                    <img src="./Imagens/sprinklerWhite64.png" alt="">
+                    <span>
+                        Aspersor<br>Individual
+                    </span>
+                </button>
+                <div id="janelaAspersorIndiv" class="popup">
+                    <div class="content">
+                        <!--
+                        <div class="tituloJanela">
+                            Seus favoritos:
+                        </div>
+                        -->
+                        <div class="inputPopup">
+                            <div>
+                                <span>Nome do Aspersor:</span>
+                                <button id="nomeAspersor" onclick="botaoSubPainel(id)" class="botao">
+                                    <span>Selecionar</span>
+                                </button>
+                            </div>
+                            <div>
+                                <span>Número de ciclos:</span>
+                                <input id="cicloAspersor" type="number" maxlength="1">
+                            </div>
+                        </div>
+                        <div class="botoes">
+                            <button id="fecharAspersorIndiv" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Voltar
+                                </span>
+                            </button>
+                            <button id="acionarAspersorIndiv" onclick="enviarComando()" class="botao">
+                                <span>
+                                    Iniciar
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div id="janelaSelectAspersorIndiv" class="sub popup">
+                    <div class="content">
+                        <div class="tituloJanela">
+                            Seus favoritos:
+                        </div>
+                        <div class="inputPopup">
+                            <ul class="buttonList">
+                                <button class="botao"><span>Test #1<span></span></button>
+                                <button class="botao"><span>Test #2<span></span></button>
+                                <button class="botao"><span>Test #3<span></span></button>
+                                <button class="botao"><span>Test #4<span></span></button>
+                                <button class="botao"><span>Test #5<span></span></button>
+                                <button class="botao"><span>Test #6<span></span></button>
+                                <button class="botao"><span>Test #7<span></span></button>
+                                <button class="botao"><span>Test #8<span></span></button>
+                                <button class="botao"><span>Test #9<span></span></button>
+                                <button class="botao"><span>Test #10<span></span></button>
+                                <button class="botao"><span>Test #11<span></span></button>
+                                <button class="botao"><span>Test #12<span></span></button>
+                                <button class="botao"><span>Test #13<span></span></button>
+                                <button class="botao"><span>Test #14<span></span></button>
+                                <button class="botao"><span>Test #15<span></span></button>
+                                <button class="botao"><span>Test #16<span></span></button>                    
+                            </ul>  
+                        </div>
+                        <div class="botoes">
+                            <button id="fecharSelectAspersorIndiv" onclick="fecharSubPainel(id)" class="botao">
+                                <span>
+                                    Voltar
+                                </span>
+                            </button>
+                            <button id="acionarSelectAspersorIndiv" onclick="enviarComando()" class="botao">
+                                <span>
+                                    Confirmar
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="Desativa" class="botaoPainel botaoZ" href="">
+                <img src="./Imagens/unavailable64.png" alt="">
+                <span>
+                    Encerrar<br>Atividades
+                </span>    
+            </button>
+        </div>
+        <div class="botoesColuna2">
+            <div name="RotinaTeste">
+                <button id="botaoRotinaTeste" onclick="botaoPainel(id)" class="botaoPainel">
+                    <img src="./Imagens/searchWhite64.png" alt="">
+                    <span>
+                        Rotina<br>de Teste
+                    </span>    
+                </button>
+                <div id="janelaRotinaTeste" class="popup">
+                    <div class="content">
+                        <div class="tituloJanela">
+                            texto
+                        </div>
+                        <div class="botoes">
+                            <button id="fecharRotinaTeste" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Voltar
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="LigaTorneira">
+                <button id="botaoLigaTorneira" onclick="botaoPainel(id)" class="botaoPainel">
+                    <img src="./Imagens/waterFauWhite64.png" alt="">
+                    <span>
+                        Torneiras
+                    </span>    
+                </button>
+                <div id="janelaLigaTorneira" class="popup">
+                    <div class="content">
+                        <div class="tituloJanela">
+                            texto
+                        </div>
+                        <div class="botoes">
+                            <button id="fecharLigaTorneira" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Voltar
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div name="InfoSistema">
+                <button id="botaoInfoSistema" onclick="botaoPainel(id)" class="botaoPainel">
+                    <img src="./Imagens/inforWhite64.png" alt="">
+                    <span>
+                        Sistema
+                    </span>    
+                </button>
+                <div id="janelaInfoSistema" class="popup">
+                    <div class="content">
+                        <div class="tituloJanela">
+                            texto
+                        </div>
+                        <div class="botoes">
+                            <button id="fecharInfoSistema" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Voltar
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div name="Configuracoes" class="botaoFlutuante">
+        <a id="botaoConfiguracoes" onclick="botaoPainel(id)">
+            <img src="./Imagens/settingsWhite64.png" alt="">
+        </a>
+        <div id="janelaConfiguracoes" class="popup">
+            <div class="content">
+                <h1 class="tituloJanela">
+                    Configuracoes
+                </h1>
+                <div class="subtitulo">
+                    texto
+                </div>
+                <div class="botoes">
+                    <button id="fecharConfiguracoes" onclick="fecharPainel(id)" class="botao">
+                        <span>
+                            Voltar
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    <script src="./Scripts/window.js"></script>
+    <script src="./Scripts/script.js"></script>
 </body>
 </html>
