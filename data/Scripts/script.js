@@ -1,27 +1,11 @@
 const ENDEREÇO = {
-    "URLPagina": `../Paginas/PainelPrincipal.html`,
+    "URLPagina": `../`,
     "URLComando":`../comando?`,
-    "URLDesligarTudo":`../desligartudo`
+    "URLDesligarTudo":`../desligar-tudo`,
+    "URLCicloDiario":`../ciclo-diario`
 }
 
-const Aspersores = new Map();
 
-Aspersores.set("orquidia", "0");
-Aspersores.set("rosa", "1");
-Aspersores.set("jasmin", "2");
-Aspersores.set("margarida", "3");
-Aspersores.set("copo de leite", "4");
-Aspersores.set("girassol", "5");
-Aspersores.set("tulipa", "6");
-Aspersores.set("lirio", "7");
-Aspersores.set("tomate cereja", "8");
-Aspersores.set("coentro", "9");
-Aspersores.set("alface", "a");
-Aspersores.set("babosa", "b");
-Aspersores.set("melancia", "c");
-Aspersores.set("erva sidreira", "d");
-Aspersores.set("tomate", "e");
-Aspersores.set("pimenta", "f");
 
 // Imprime o comando atual no console
 // console.log(window.location.href.split("?")[1]);
@@ -55,16 +39,23 @@ function enviarComando() {
     let cicloAspersor = document.getElementById('cicloAspersor').value;
     fetch(`${ENDEREÇO.URLComando}nomeAspesor=${nomeAspesor}&cicloAspersor=${cicloAspersor}`)
     .then(
-        alert("Comando enviado")
+        alert("Comando enviado.")
     );
 }
-
 
 // Inicia o ciclo de irrigação diário quando o usuário confirma
 document.querySelector("#desativa").addEventListener("click", e => {
     fetch(`${ENDEREÇO.URLDesligarTudo}`)
     .then(
-        alert("Sistema desligado")
+        alert("Sistema desligado.")
+    );
+});
+
+// Inicia o ciclo de irrigação diário quando o usuário confirma
+document.querySelector("#iniciarCicloDiario").addEventListener("click", e => {
+    fetch(`${ENDEREÇO.URLCicloDiario}`)
+    .then(
+        alert("Todos os sensores foram lidos. O ciclo diário foi inciado.")
     );
 });
 

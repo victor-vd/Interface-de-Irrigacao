@@ -1,4 +1,4 @@
-Desativa.addEventListener("click", function () {
+document.querySelector(`#desativa`).addEventListener("click", function () {
     console.log('desativa');
 });
 

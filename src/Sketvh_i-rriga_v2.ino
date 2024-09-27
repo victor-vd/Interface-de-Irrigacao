@@ -112,8 +112,13 @@ void setup() {
 
 
   //Desligar tudo
-  server.on("/desligartudo",HTTP_GET,[](AsyncWebServerRequest* request){
+  server.on("/desligar-tudo",HTTP_GET,[](AsyncWebServerRequest* request){
     Serial.println("Z");
+    request->send(200);
+  });
+  //Ativar ciclo diário
+  server.on("/ciclo-diario",HTTP_GET,[](AsyncWebServerRequest* request){
+    Serial.println("I");
     request->send(200);
   });
   //404
