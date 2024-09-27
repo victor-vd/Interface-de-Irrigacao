@@ -155,7 +155,7 @@
                 font-size: 22px;
 
                 span {
-                    width: 92px;
+                    min-width: 92px;
                 }
                 input {
                     width: 148px;
@@ -216,7 +216,6 @@
 /* Estilização do botões de configurações flutuante */
 @media screen and (max-width: 720px) { 
     .sub.popup .content{
-        height: 512px;
 
         .botao{
             margin: 24px 8px;
@@ -224,33 +223,39 @@
 
         .buttonList{
             padding-left: 0px;
-            margin-top: 0;
-    
-            .botao{
-                margin-top: 8px;
-                margin-bottom: 8px;
-                min-width: 200px;
-                max-width: 240px;
-            }
         }
     }
-	@media screen and (max-width: 380px) { 
+/*
+    @media screen and (max-width: 380px) { 
         .sub.popup .content{
-            height: 512px;
 
-            .botao{
-                margin: 24px 8px;
+        }
+    }
+*/
+}
+
+@media screen and (max-width: 720px) { 
+    .dropdown {
+            &.container {
+                padding-top: 56px;
+                margin-left: 18.5px;
             }
-            
-            .buttonList{
-                margin-top: 0;
-        
-                .botao{
-                    margin-top: 8px;
-                    margin-bottom: 8px;
-                    min-width: 200px;
-                    max-width: 240px;
-                }
+            /* Links inside the dropdown */
+            &.container .numeroInput {
+                margin: -10px 8px;
+                padding: 12px;
+                font-size: 22px;
+            }
+      }
+      @media screen and (max-width: 380px) { 
+        .dropdown {
+            &.container {
+                padding-top: 56px;
+                margin-left: 22px;
+            }
+            /* Links inside the dropdown */
+            &.container .numeroInput {
+                font-size: 20px;
             }
         }
     }

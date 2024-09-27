@@ -1,6 +1,7 @@
 const ENDEREÇO = {
     "URLPagina": `../Paginas/PainelPrincipal.html`,
-    "URLComando":`../comando?`
+    "URLComando":`../comando?`,
+    "URLDesligarTudo":`../desligartudo`
 }
 
 const Aspersores = new Map();
@@ -22,6 +23,7 @@ Aspersores.set("erva sidreira", "d");
 Aspersores.set("tomate", "e");
 Aspersores.set("pimenta", "f");
 
+// Imprime o comando atual no console
 // console.log(window.location.href.split("?")[1]);
 
 // Inicia o ciclo de irrigação diário quando o usuário confirma
@@ -55,8 +57,16 @@ function enviarComando() {
     .then(
         alert("Comando enviado")
     );
-
 }
+
+
+// Inicia o ciclo de irrigação diário quando o usuário confirma
+document.querySelector("#desativa").addEventListener("click", e => {
+    fetch(`${ENDEREÇO.URLDesligarTudo}`)
+    .then(
+        alert("Sistema desligado")
+    );
+});
 
 // Para fazer:
 // Testar com 2 inputs

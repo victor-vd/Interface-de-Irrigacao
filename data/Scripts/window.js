@@ -24,3 +24,11 @@ function fecharSubPainel(id){
 window.addEventListener("click", function (event) {
         event.target.classList.remove("show");
 });
+
+function fecharDropdown(id){
+    document.querySelector(`#${id}`).parentElement.style.display = "none";
+}
+
+function test(id){
+    document.querySelector(`#${id}`).nextElementSibling.style.removeProperty("display");
+}

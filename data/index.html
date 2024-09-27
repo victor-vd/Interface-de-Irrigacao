@@ -79,7 +79,17 @@
                             </div>
                             <div>
                                 <span>Número de ciclos:</span>
-                                <input id="cicloAspersor" type="number" maxlength="1">
+                                <nav class="dropdown">
+                                        <button class="dropdown botao" id="cicloAsp" onclick="test(id); console.log('legal')" onmouseover="test(id); console.log('legal')">         
+                                            <span>Selecionar</span>
+                                        </button>
+                                        <ul class="dropdown container">
+                                            <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>1 ciclos</span></li>
+                                            <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>2 ciclos</span></li>
+                                            <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>3 ciclos</span></li>
+                                            <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>4 ciclos</span></li>                
+                                        </ul>  
+                                </nav>
                             </div>
                         </div>
                         <div class="botoes">
@@ -103,22 +113,22 @@
                         </div>
                         <div class="inputPopup">
                             <ul class="buttonList">
-                                <button class="botao"><span>Test #1<span></span></button>
-                                <button class="botao"><span>Test #2<span></span></button>
-                                <button class="botao"><span>Test #3<span></span></button>
-                                <button class="botao"><span>Test #4<span></span></button>
-                                <button class="botao"><span>Test #5<span></span></button>
-                                <button class="botao"><span>Test #6<span></span></button>
-                                <button class="botao"><span>Test #7<span></span></button>
-                                <button class="botao"><span>Test #8<span></span></button>
-                                <button class="botao"><span>Test #9<span></span></button>
-                                <button class="botao"><span>Test #10<span></span></button>
-                                <button class="botao"><span>Test #11<span></span></button>
-                                <button class="botao"><span>Test #12<span></span></button>
-                                <button class="botao"><span>Test #13<span></span></button>
-                                <button class="botao"><span>Test #14<span></span></button>
-                                <button class="botao"><span>Test #15<span></span></button>
-                                <button class="botao"><span>Test #16<span></span></button>                    
+                                <button class="botao"><span>Test #1</span></button>
+                                <button class="botao"><span>Test #2</span></button>
+                                <button class="botao"><span>Test #3</span></button>
+                                <button class="botao"><span>Test #4</span></button>
+                                <button class="botao"><span>Test #5</span></button>
+                                <button class="botao"><span>Test #6</span></button>
+                                <button class="botao"><span>Test #7</span></button>
+                                <button class="botao"><span>Test #8</span></button>
+                                <button class="botao"><span>Test #9</span></button>
+                                <button class="botao"><span>Test #10</span></button>
+                                <button class="botao"><span>Test #11</span></button>
+                                <button class="botao"><span>Test #12</span></button>
+                                <button class="botao"><span>Test #13</span></button>
+                                <button class="botao"><span>Test #14</span></button>
+                                <button class="botao"><span>Test #15</span></button>
+                                <button class="botao"><span>Test #16</span></button>                    
                             </ul>  
                         </div>
                         <div class="botoes">
@@ -136,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <button id="Desativa" class="botaoPainel botaoZ" href="">
+            <button id="desativa" class="botaoPainel botaoZ" href="">
                 <img src="./Imagens/unavailable64.png" alt="">
                 <span>
                     Encerrar<br>Atividades
@@ -236,6 +246,19 @@
         </div>
     </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 
     <script src="./Scripts/window.js"></script>

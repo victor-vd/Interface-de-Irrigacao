@@ -1,4 +1,4 @@
-1ignorar/
+.pio/
 .vscode/
-
-.gitignore
+lib/
+ignorar/
