@@ -377,7 +377,7 @@ body {
         border-radius: 8px;
         box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
     }
-    /* Links inside the dropdown */
+    /* Links dentro do dropdown */
     &.container .numeroInput {
         display: block;
         cursor: pointer;
