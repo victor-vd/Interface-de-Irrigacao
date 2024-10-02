@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'asapregular';
-    src:url('../Fontes/asapvariable1.woff') format('woff'),
+    src: url('../Fontes/asapvariable1.woff') format('woff'),
         url('../Fontes/asapvariable2.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
@@ -11,29 +11,35 @@
     initial-value: #61D057;
     inherits: false;
 }
+
 @property --ciano {
     syntax: '<color>';
-    initial-value: #62DBD2  ;
+    initial-value: #62DBD2;
     inherits: false;
 }
+
 @property --azul {
     syntax: '<color>';
     initial-value: #4176FF;
     inherits: false;
 }
+
 @property --laranja {
     syntax: '<color>';
     initial-value: #ff6f00;
     inherits: false;
 }
+
 @property --vermelho {
     syntax: '<color>';
     initial-value: #ff3700;
     inherits: false;
 }
+
 @property --tamanho-popup {
     initial-value: 10000;
 }
+
 @property --margin-popup {
     initial-value: 0;
 }
@@ -45,11 +51,11 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin: 0px;
-    
+
     a {
         text-decoration: none;
     }
-} 
+}
 
 /* Estilização da barra de navegação */
 .navbar {
@@ -58,15 +64,17 @@ body {
     display: flex;
     justify-content: left;
     align-items: flex-start;
-    margin-bottom: 32px;
-    
+    margin-bottom: 64px;
+
     .imagem {
         height: 44px;
         width: 44px;
         margin: 10px 6px 10px 16px;
     }
+
     div {
         margin: auto auto 17px auto;
+
         span {
             color: white;
             font-size: 32px;
@@ -110,13 +118,15 @@ body {
         justify-content: center;
         margin: auto 16px;
     }
+
     .botoesColuna2 {
         display: flex;
         flex-direction: column;
         justify-content: center;
         margin: auto 16px;
     }
-    .botaoPainel{
+
+    .botaoPainel {
         background: linear-gradient(90deg, var(--verde), var(--ciano));
         transition: --verde 0.2s, --ciano 0.2s;
         display: flex;
@@ -135,46 +145,70 @@ body {
         font-weight: 600;
         color: white;
         cursor: pointer;
-    
+
         &.botaoZ {
             background: linear-gradient(90deg, var(--vermelho), var(--laranja));
             transition: --laranja 0.2s, --vermelho 0.2s;
-        
+
             &:hover {
                 --vermelho: #ff4511;
                 --laranja: #ff8800;
                 transition: --laranja 0.5s, --vermelho 0.5s;
-            } 
+            }
+
             &:active {
                 --vermelho: #ff3700;
                 --laranja: #ff4000;
                 transition: --laranja 0.1s, --vermelho 0.1s;
-            }  
+            }
         }
-    
-        img{
+
+        img {
             height: 64px;
             margin: auto 24px auto 24px;
         }
+
         &:hover {
             --verde: #61de87;
             --ciano: #3fd2df;
             transition: --verde 0.4s, --ciano 0.4s;
-        } 
+        }
+
         &:active {
             --verde: #61D057;
             --ciano: #62db78;
             transition: --verde 0.1s, --ciano 0.1s;
-        }    
-        span{
-    
+        }
+
+        span {
+
             line-height: 25px;
             margin: auto 42px auto 0px;
         }
-        &#botaoRotinaTeste {span{margin: auto 60px auto 0px;}}
-        &#botaoCicloDiario {span{margin: auto 30px auto 0px;}}
-        &#botaoLigaTorneira {span{margin: auto 56px auto 0px;}}
-        &#botaoInfoSistema {span{margin: auto 64px auto 0px;}}
+
+        &#botaoRotinaTeste {
+            span {
+                margin: auto 60px auto 0px;
+            }
+        }
+
+        &#botaoCicloDiario {
+            span {
+                margin: auto 30px auto 0px;
+            }
+        }
+
+        &#botaoLigaTorneira {
+            span {
+                margin: auto 56px auto 0px;
+            }
+        }
+
+        &#botaoInfoSistema {
+            span {
+                margin: auto 64px auto 0px;
+            }
+        }
     }
 }
 
@@ -187,6 +221,7 @@ body {
     justify-content: center;
     margin: auto auto 0 auto;
 }
+
 .botao {
     background: linear-gradient(90deg, var(--verde), var(--ciano));
     transition: --verde 0.2s, --ciano 0.2s;
@@ -209,13 +244,14 @@ body {
         --verde: #61de87;
         --ciano: #3fd2df;
         transition: --verde 0.4s, --ciano 0.4s;
-    } 
+    }
+
     &:active {
         --verde: #61D057;
         --ciano: #62db78;
         transition: --verde 0.1s, --ciano 0.1s;
-    }    
-}    
+    }
+}
 
 /* Estilização da janela de pop-up */
 .popup {
@@ -234,13 +270,13 @@ body {
         justify-content: center;
         flex-direction: column;
         background-color: white;
-        position:fixed;
+        position: fixed;
         left: 50%;
         top: 50%;
-        -ms-transform: translate(-50%,-50%);
-        -moz-transform:translate(-50%,-50%);
-        -webkit-transform: translate(-50%,-50%);
-        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
         padding: 20px;
         border: 1px solid #888888;
         box-shadow: 4px 8px 32px -16px black;
@@ -256,6 +292,7 @@ body {
             text-shadow: 1px 2px 4px rgb(193, 193, 193);
             color: #0fb900;
         }
+
         .inputPopup {
             display: grid;
             justify-items: center;
@@ -282,25 +319,28 @@ body {
                 }
             }
         }
+
         .botao {
             margin: 24px 20px 24px 20px;
         }
     }
 }
-.sub.popup .content{
+
+.sub.popup .content {
     height: 512px;
 
     .inputPopup {
         overflow: auto;
     }
-    .buttonList{
+
+    .buttonList {
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
         padding-left: 15px;
         margin-top: 0;
 
-        .botao{
+        .botao {
             background: linear-gradient(90deg, var(--verde), var(--verde));
             margin-top: 8px;
             margin-bottom: 8px;
@@ -308,48 +348,54 @@ body {
             min-width: 200px;
             max-width: 240px;
 
-            span{
+            span {
                 text-align: center;
                 word-wrap: break-word;
             }
+
             &:hover {
                 --verde: #79ff6d;
                 transition: --verde 0.5s;
-            } &:active {
+            }
+
+            &:active {
                 --verde: #61D057;
                 transition: --verde 0.1s;
             }
         }
     }
 }
+
 .show {
     display: block;
 }
 
 /* Estilização do botões de configurações flutuante */
-.botaoFlutuante{
+.botaoFlutuante {
     background: linear-gradient(90deg, var(--verde), var(--ciano));
-    position:fixed;
-    width:64px;
-    height:64px;
-    bottom:40px;
-    right:40px;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
+    position: fixed;
+    width: 64px;
+    height: 64px;
+    bottom: 40px;
+    right: 40px;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
     box-shadow: 2px 2px 3px #999;
 
     &:hover {
         --verde: #61de87;
         --ciano: #3fd2df;
         transition: --verde 0.4s, --ciano 0.4s;
-    } 
+    }
+
     &:active {
         --verde: #61D057;
         --ciano: #62db78;
         transition: --verde 0.1s, --ciano 0.1s;
-    }    
-    img{
+    }
+
+    img {
         height: 44px;
         margin-top: 10px;
     }
@@ -359,10 +405,11 @@ body {
     position: relative;
     width: fit-content;
 
-    &.botao{    
+    &.botao {
         z-index: 2;
         width: fit-content;
     }
+
     &.container {
         display: none;
         position: absolute;
@@ -375,8 +422,9 @@ body {
         width: fit-content;
         background-color: white;
         border-radius: 8px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
     }
+
     /* Links dentro do dropdown */
     &.container .numeroInput {
         display: block;
@@ -387,11 +435,12 @@ body {
         color: #11d000;
         font-size: 22px;
         font-weight: bolder;
-        
+
         &:hover {
             color: #35a958;
         }
     }
+
     &:hover &.container {
         display: block;
     }

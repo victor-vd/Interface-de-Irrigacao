@@ -1,11 +1,9 @@
 const ENDEREÇO = {
     "URLPagina": `../`,
-    "URLComando":`../comando?`,
-    "URLDesligarTudo":`../desligar-tudo`,
-    "URLCicloDiario":`../ciclo-diario`
+    "URLComando": `../comando?`,
+    "URLDesligarTudo": `../desligar-tudo`,
+    "URLCicloDiario": `../ciclo-diario`
 }
-
-
 
 // Imprime o comando atual no console
 // console.log(window.location.href.split("?")[1]);
@@ -38,25 +36,25 @@ function enviarComando() {
     let nomeAspesor = document.getElementById('nomeAspersor').value;
     let cicloAspersor = document.getElementById('cicloAspersor').value;
     fetch(`${ENDEREÇO.URLComando}nomeAspesor=${nomeAspesor}&cicloAspersor=${cicloAspersor}`)
-    .then(
-        alert("Comando enviado.")
-    );
+        .then(
+            alert("Comando enviado.")
+        );
 }
 
 // Inicia o ciclo de irrigação diário quando o usuário confirma
 document.querySelector("#desativa").addEventListener("click", e => {
     fetch(`${ENDEREÇO.URLDesligarTudo}`)
-    .then(
-        alert("Sistema desligado.")
-    );
+        .then(
+            alert("Sistema desligado.")
+        );
 });
 
 // Inicia o ciclo de irrigação diário quando o usuário confirma
 document.querySelector("#iniciarCicloDiario").addEventListener("click", e => {
     fetch(`${ENDEREÇO.URLCicloDiario}`)
-    .then(
-        alert("Todos os sensores foram lidos. O ciclo diário foi inciado.")
-    );
+        .then(
+            alert("Todos os sensores foram lidos. O ciclo diário foi inciado.")
+        );
 });
 
 // Para fazer:

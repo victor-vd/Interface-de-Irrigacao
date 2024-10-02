@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="./Style/lowWidth.css">
     <title>PainelPrincipal</title>
 </head>
+
 <body>
-    <nav class="navbar">    
+    <nav class="navbar">
         <a href="index.html"><img class="imagem" src="./Imagens/logoIrriga64.png" alt=""></a>
         <div class="titulo">
             <span>
@@ -20,11 +22,11 @@
     <div class="imagem grande">
     </div>
 
-    <div class="titulo">
+    <!-- <div class="titulo">
         <span>
             Painel Principal
         </span>
-    </div>
+    </div> -->
 
     <div class="botoesPainel" id="botoesPainel">
         <div class="botoesColuna1">
@@ -33,7 +35,7 @@
                     <img src="./Imagens/routineWhite64.png" alt="">
                     <span>
                         Ciclo Diário
-                    </span>    
+                    </span>
                 </button>
                 <div id="janelaCicloDiario" class="popup">
                     <div class="content">
@@ -55,7 +57,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div name="AspersorIndiv">
                 <button id="botaoAspersorIndiv" onclick="botaoPainel(id)" class="botaoPainel">
                     <img src="./Imagens/sprinklerWhite64.png" alt="">
@@ -80,15 +82,21 @@
                             <div>
                                 <span>Número de ciclos:</span>
                                 <nav class="dropdown">
-                                        <button class="dropdown botao" id="cicloAsp" onclick="test(id); console.log('legal')" onmouseover="test(id); console.log('legal')">         
-                                            <span>Selecionar</span>
-                                        </button>
-                                        <ul class="dropdown container">
-                                            <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>1 ciclos</span></li>
-                                            <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>2 ciclos</span></li>
-                                            <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>3 ciclos</span></li>
-                                            <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>4 ciclos</span></li>                
-                                        </ul>  
+                                    <button class="dropdown botao" id="cicloAsp"
+                                        onclick="test(id); console.log('legal')"
+                                        onmouseover="test(id); console.log('legal')">
+                                        <span>Selecionar</span>
+                                    </button>
+                                    <ul class="dropdown container">
+                                        <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>1
+                                                ciclos</span></li>
+                                        <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>2
+                                                ciclos</span></li>
+                                        <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>3
+                                                ciclos</span></li>
+                                        <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>4
+                                                ciclos</span></li>
+                                    </ul>
                                 </nav>
                             </div>
                         </div>
@@ -112,24 +120,8 @@
                             Seus favoritos:
                         </div>
                         <div class="inputPopup">
-                            <ul class="buttonList">
-                                <button class="botao"><span>Test #1</span></button>
-                                <button class="botao"><span>Test #2</span></button>
-                                <button class="botao"><span>Test #3</span></button>
-                                <button class="botao"><span>Test #4</span></button>
-                                <button class="botao"><span>Test #5</span></button>
-                                <button class="botao"><span>Test #6</span></button>
-                                <button class="botao"><span>Test #7</span></button>
-                                <button class="botao"><span>Test #8</span></button>
-                                <button class="botao"><span>Test #9</span></button>
-                                <button class="botao"><span>Test #10</span></button>
-                                <button class="botao"><span>Test #11</span></button>
-                                <button class="botao"><span>Test #12</span></button>
-                                <button class="botao"><span>Test #13</span></button>
-                                <button class="botao"><span>Test #14</span></button>
-                                <button class="botao"><span>Test #15</span></button>
-                                <button class="botao"><span>Test #16</span></button>                    
-                            </ul>  
+                            <ul id="aspList" class="buttonList">
+                            </ul>
                         </div>
                         <div class="botoes">
                             <button id="fecharSelectAspersorIndiv" onclick="fecharSubPainel(id)" class="botao">
@@ -150,7 +142,7 @@
                 <img src="./Imagens/unavailable64.png" alt="">
                 <span>
                     Encerrar<br>Atividades
-                </span>    
+                </span>
             </button>
         </div>
         <div class="botoesColuna2">
@@ -159,7 +151,7 @@
                     <img src="./Imagens/searchWhite64.png" alt="">
                     <span>
                         Rotina<br>de Teste
-                    </span>    
+                    </span>
                 </button>
                 <div id="janelaRotinaTeste" class="popup">
                     <div class="content">
@@ -181,7 +173,7 @@
                     <img src="./Imagens/waterFauWhite64.png" alt="">
                     <span>
                         Torneiras
-                    </span>    
+                    </span>
                 </button>
                 <div id="janelaLigaTorneira" class="popup">
                     <div class="content">
@@ -203,7 +195,7 @@
                     <img src="./Imagens/inforWhite64.png" alt="">
                     <span>
                         Sistema
-                    </span>    
+                    </span>
                 </button>
                 <div id="janelaInfoSistema" class="popup">
                     <div class="content">
@@ -248,6 +240,8 @@
     </div>
 
     <script src="./Scripts/window.js"></script>
-    <script type="module" src="./Scripts/script.js"></script>
+    <script src="./Scripts/script.js"></script>
+    <script type="module" src="./Scripts/append.js"></script>
 </body>
+
 </html>
