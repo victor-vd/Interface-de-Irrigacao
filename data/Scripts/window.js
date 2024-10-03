@@ -2,33 +2,28 @@ document.querySelector(`#desativa`).addEventListener("click", function () {
     console.log('desativa');
 });
 
-function botaoPainel(id){
+function botaoPainel(id) {
     document.querySelector(`#${id}`).nextElementSibling.classList.add("show");
-    document.querySelector(`#${id}`).nextElementSibling.nextElementSibling.classList.remove("show");
 }
 
-function fecharPainel(id){
+function fecharPainel(id) {
     document.querySelector(`#${id}`).parentElement.parentElement.parentElement.classList.remove("show");
 }
 
-function botaoSubPainel(id){
+function botaoSubPainel(id) {
     document.querySelector(`#${id}`).parentElement.parentElement.parentElement.parentElement.classList.remove("show");
     document.querySelector(`#${id}`).parentElement.parentElement.parentElement.parentElement.nextElementSibling.classList.add("show");
 }
 
-function fecharSubPainel(id){
+function fecharSubPainel(id) {
     document.querySelector(`#${id}`).parentElement.parentElement.parentElement.previousElementSibling.classList.add("show");
     document.querySelector(`#${id}`).parentElement.parentElement.parentElement.classList.remove("show");
 }
 
-window.addEventListener("click", function (event) {
-        event.target.classList.remove("show");
-});
-
-function fecharDropdown(id){
+function fecharDropdown(id) {
     document.querySelector(`#${id}`).parentElement.style.display = "none";
 }
 
-function test(id){
-    document.querySelector(`#${id}`).nextElementSibling.style.removeProperty("display");
-}
+document.querySelector(`#cicloAsp`).addEventListener("click", e => {
+    document.querySelector(`#cicloAsp`).nextElementSibling.style.display = "block";
+});

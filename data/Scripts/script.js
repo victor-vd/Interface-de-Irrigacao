@@ -11,49 +11,97 @@ const selectedAsp = [];
 
 const botoesAsp = document.getElementsByClassName(`botaoSelectApersor`);
 
+const selectCiclos = document.getElementsByClassName(`selectCiclo`);
 
+const maxCiclosAsp = 4;
+
+let selectedCiclos = null;
 
 console.log(botoesAsp.length);
 
+
 for (let i = 0; i < botoesAsp.length; i++) {
-    console.log(getAspersorId(botoesAsp[i]));
     botoesAsp[i].addEventListener("click", e => {
 
-        if (!selectedAsp.includes(`${getAspersorId(botoesAsp[i])}`)) {
-            selectedAsp.push(`${getAspersorId(botoesAsp[i])}`);
+        if (!selectedAsp.includes(`${getId(botoesAsp[i])}`)) {
+            selectedAsp.push(`${getId(botoesAsp[i])}`);
             botoesAsp[i].classList.add("checked");
-            console.log(1);
             console.log(selectedAsp);
         } else {
-            selectedAsp.splice(selectedAsp.indexOf(`${getAspersorId(botoesAsp[i])}`), 1);
+            selectedAsp.splice(selectedAsp.indexOf(`${getId(botoesAsp[i])}`), 1);
             botoesAsp[i].classList.remove("checked");
-            console.log(2);
             console.log(selectedAsp);
         }
     });
 }
 
-document.querySelector("#fecharSelectAspersorIndiv").addEventListener("click", e => {
-    selectedAsp.splice(0, selectedAsp.length)
+
+for (let i = 0; i < maxCiclosAsp; i++) {
+    selectCiclos[i].addEventListener("click", e => {
+        selectedCiclos = getId(selectCiclos[i]);
+        console.log(selectedCiclos);
+    });
+}
+
+
+function getId(arr) { return arr.id.substring(arr.id.length - 1); }
+
+
+document.querySelector("#voltarSelectAspersorIndiv").addEventListener("click", e => {
+    selectedAsp.splice(0, selectedAsp.length);
     console.log(selectedAsp);
 });
 
-function getAspersorId(arr) { return arr.id.substring(arr.id.length - 1); }
 
-document.querySelector("#selectAspersorIndiv").addEventListener("click", e => {
-    for (let i = 0; i < selectedAsp.length; i++) {
-        selectedAsp
-    }
+document.querySelector("#fecharAspersorIndiv").addEventListener("click", e => {
+    limparCampos();
 });
 
-function enviarComando() {
-    let nomeAspesor = document.getElementById('nomeAspersor').value;
-    let cicloAspersor = document.getElementById('cicloAspersor').value;
 
-    fetch(`${ENDEREÇO.URLComando}nomeAspesor=${nomeAspesor}&cicloAspersor=${cicloAspersor}`)
+function limparCampos() {
+    selectedAsp.splice(0, selectedAsp.length);
+    selectedCiclos = 0;
+    console.log(selectedAsp, selectedCiclos);
+}
+
+
+document.querySelector("#confirmarAspersorIndiv").addEventListener("click", e => {
+
+});
+
+
+document.querySelector("#iniciarAspersorIndiv").addEventListener("click", e => {
+    let comandoApersores = "";
+
+    for (let i = 0; i < selectedAsp.length; i++) {
+        comandoApersores += selectedAsp[i] + selectedCiclos;
+    }
+
+    enviarComando(comandoApersores, selectedCiclos);
+});
+
+
+function enviarComando(comandoApersores, selectedCiclos) {
+    let mensagemPopup = "";
+
+    for (let i = 0; i < selectedAsp.length; i++) {
+        if (selectedAsp.length == 1) {
+            mensagemPopup += `Aspersor ${selectedAsp[i]}`;
+        } else if (i == selectedAsp.length - 2) {
+            mensagemPopup += `e Aspersor ${selectedAsp[i]} `;
+        } else if (i == selectedAsp.length - 1) {
+            mensagemPopup += `foram ativados com sucesso com duração de ${selectedCiclos} ciclos.`;
+        } else {
+            mensagemPopup += `Aspersor ${selectedAsp[i]}, `;
+        }
+    }
+
+    fetch(`${ENDEREÇO.URLComando}${comandoApersores}`)
         .then(
-            alert("Comando enviado.")
+            alert(`${mensagemPopup}`)
         );
+    selectedAsp.splice(0, selectedAsp.length);
+    selectedCiclos = 0;
 }
 
 // Inicia o ciclo de irrigação diário quando o usuário confirma
@@ -70,6 +118,31 @@ document.querySelector("#iniciarCicloDiario").addEventListener("click", e => {
         .then(
             alert("Todos os sensores foram lidos. O ciclo diário foi inciado.")
         );
+});
+
+window.addEventListener("click", function (event) {
+    event.target.classList.remove("show");
+
+    let fecharPopups = false;
+
+    for (let i = 0; i < document.getElementsByClassName("popup").length; i++) {
+        if (document.getElementsByClassName("popup")[i].classList.contains("show")) {
+            fecharPopups = true;
+            console.log(1);
+            break;
+        }
+    }
+    for (let i = 0; i < document.getElementsByClassName("sub popup").length; i++) {
+        if (document.getElementsByClassName("sub popup")[i].classList.contains("show")) {
+            fecharPopups = true;
+            console.log(1);
+            break;
+        }
+    }
+
+    if (!fecharPopups) {
+        limparCampos();
+    }
 });
 
 

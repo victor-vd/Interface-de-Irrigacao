@@ -82,20 +82,32 @@
                             <div>
                                 <span>Número de ciclos:</span>
                                 <nav class="dropdown">
-                                    <button class="dropdown botao" id="cicloAsp"
-                                        onclick="test(id); console.log('legal')"
-                                        onmouseover="test(id); console.log('legal')">
-                                        <span>Selecionar</span>
+                                    <button class="dropdown botao" id="cicloAsp">
+                                        <span>
+                                            Selecionar
+                                        </span>
                                     </button>
-                                    <ul class="dropdown container">
-                                        <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>1
-                                                ciclos</span></li>
-                                        <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>2
-                                                ciclos</span></li>
-                                        <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>3
-                                                ciclos</span></li>
-                                        <li id="cicloAspSelect" class="numeroInput" onclick="fecharDropdown(id)"><span>4
-                                                ciclos</span></li>
+                                    <ul id="cicloDropdown" class="dropdown container" style="display: none;">
+                                        <li id="ciclo1" class="numeroInput selectCiclo" onclick="fecharDropdown(id)">
+                                            <span>
+                                                1 ciclo
+                                            </span>
+                                        </li>
+                                        <li id="ciclo2" class="numeroInput selectCiclo" onclick="fecharDropdown(id)">
+                                            <span>
+                                                2 ciclos
+                                            </span>
+                                        </li>
+                                        <li id="ciclo3" class="numeroInput selectCiclo" onclick="fecharDropdown(id)">
+                                            <span>
+                                                3 ciclos
+                                            </span>
+                                        </li>
+                                        <li id="ciclo4" class="numeroInput selectCiclo" onclick="fecharDropdown(id)">
+                                            <span>
+                                                4 ciclos
+                                            </span>
+                                        </li>
                                     </ul>
                                 </nav>
                             </div>
@@ -106,7 +118,7 @@
                                     Voltar
                                 </span>
                             </button>
-                            <button id="acionarAspersorIndiv" onclick="enviarComando()" class="botao">
+                            <button id="iniciarAspersorIndiv" onclick="enviarComando()" class="botao">
                                 <span>
                                     Iniciar
                                 </span>
@@ -124,12 +136,12 @@
                             </ul>
                         </div>
                         <div class="botoes">
-                            <button id="fecharSelectAspersorIndiv" onclick="fecharSubPainel(id)" class="botao">
+                            <button id="voltarSelectAspersorIndiv" onclick="fecharSubPainel(id)" class="botao">
                                 <span>
                                     Voltar
                                 </span>
                             </button>
-                            <button id="selectAspersorIndiv" onclick="enviarComando()" class="botao">
+                            <button id="confirmarAspersorIndiv" onclick="fecharSubPainel(id)" class="botao">
                                 <span>
                                     Confirmar
                                 </span>

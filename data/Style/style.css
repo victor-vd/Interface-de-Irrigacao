@@ -418,7 +418,6 @@ body {
     }
 
     &.container {
-        display: none;
         position: absolute;
         z-index: 1;
         top: 40px;
@@ -446,9 +445,5 @@ body {
         &:hover {
             color: #35a958;
         }
-    }
-
-    &:hover &.container {
-        display: block;
     }
 }
