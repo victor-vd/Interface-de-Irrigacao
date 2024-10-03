@@ -6,6 +6,7 @@ document.querySelector("#aspList").innerHTML = appendAsp();
 
 // console.log(document.querySelector("#aspList").innerHTML);
 
+// Insere os elementos no popup de aspersores, com base no arquivo de configuração do usuário
 function appendAsp() {
     let appendCode = "";
 
@@ -13,7 +14,7 @@ function appendAsp() {
         appendCode += `
         <button id="asp${aspJson.Apersores[i].codigo}" class="botao botaoSelectApersor">
             <span>
-                ${textCaptilizer(aspJson.Apersores[i].nome)} (${aspJson.Apersores[i].codigo})
+                ${nomeAspersor(i)} (${aspJson.Apersores[i].codigo.toUpperCase()})
             </span>
         </button>`;
     }
@@ -21,6 +22,16 @@ function appendAsp() {
     return appendCode;
 }
 
+// Retorna o nome do aspersor, se existir
+function nomeAspersor(index) {
+    if (aspJson.Apersores[index].nome != "") {
+        return textCaptilizer(aspJson.Apersores[index].nome);
+    } else {
+        return "Aspersor";
+    }
+}
+
+// Capitalizador de texto básico
 function textCaptilizer(textInput) {
     textInput = textInput.trim().toLowerCase();
     let wordNumber = 1;
@@ -41,6 +52,7 @@ function textCaptilizer(textInput) {
     return textInput;
 }
 
+// Função para visualizar os aspersores do console
 function mostrarAspersores() {
     console.log(`Quantidade de Apersores: ${aspJson.Apersores.length}`);
     console.log(`Aspersores.json:`);

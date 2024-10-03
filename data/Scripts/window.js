@@ -1,7 +1,3 @@
-document.querySelector(`#desativa`).addEventListener("click", function () {
-    console.log('desativa');
-});
-
 function botaoPainel(id) {
     document.querySelector(`#${id}`).nextElementSibling.classList.add("show");
 }
@@ -20,10 +16,21 @@ function fecharSubPainel(id) {
     document.querySelector(`#${id}`).parentElement.parentElement.parentElement.classList.remove("show");
 }
 
-function fecharDropdown(id) {
-    document.querySelector(`#${id}`).parentElement.style.display = "none";
+// Abre o menu dropdown ao clicar no botão "Selecionar"
+function menuDropdown(id) {
+    document.querySelector(`#${id}`).nextElementSibling.style.display = "block";
 }
 
-document.querySelector(`#cicloAsp`).addEventListener("click", e => {
-    document.querySelector(`#cicloAsp`).nextElementSibling.style.display = "block";
-});
+// Deixa o menu aberto ao mexer o mouse dentro do dropdown
+function menuDropdownOpen(id) {
+    document.querySelector(`#${id}`).style.display = "block";
+}
+
+function fecharDropdown(id) {
+    document.querySelector(`#${id}`).children[1].style.display = "none";
+}
+
+// Fecha o dropdown ao selecionar uma opção
+function selectFecharDropdown(id) {
+    document.querySelector(`#${id}`).parentElement.style.display = "none";
+}

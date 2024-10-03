@@ -81,29 +81,34 @@
                             </div>
                             <div>
                                 <span>Número de ciclos:</span>
-                                <nav class="dropdown">
-                                    <button class="dropdown botao" id="cicloAsp">
+                                <nav id="menuDropdown" class="dropdown" onmouseout="fecharDropdown(id)">
+                                    <button class="dropdown botao" onmouseover="menuDropdown(id)" id="cicloAsp">
                                         <span>
                                             Selecionar
                                         </span>
                                     </button>
-                                    <ul id="cicloDropdown" class="dropdown container" style="display: none;">
-                                        <li id="ciclo1" class="numeroInput selectCiclo" onclick="fecharDropdown(id)">
+                                    <ul id="cicloDropdown" class="dropdown container" onmouseover="menuDropdownOpen(id)"
+                                        style="display: none;">
+                                        <li id="ciclo1" class="numeroInput selectCiclo"
+                                            onclick="selectFecharDropdown(id)">
                                             <span>
                                                 1 ciclo
                                             </span>
                                         </li>
-                                        <li id="ciclo2" class="numeroInput selectCiclo" onclick="fecharDropdown(id)">
+                                        <li id="ciclo2" class="numeroInput selectCiclo"
+                                            onclick="selectFecharDropdown(id)">
                                             <span>
                                                 2 ciclos
                                             </span>
                                         </li>
-                                        <li id="ciclo3" class="numeroInput selectCiclo" onclick="fecharDropdown(id)">
+                                        <li id="ciclo3" class="numeroInput selectCiclo"
+                                            onclick="selectFecharDropdown(id)">
                                             <span>
                                                 3 ciclos
                                             </span>
                                         </li>
-                                        <li id="ciclo4" class="numeroInput selectCiclo" onclick="fecharDropdown(id)">
+                                        <li id="ciclo4" class="numeroInput selectCiclo"
+                                            onclick="selectFecharDropdown(id)">
                                             <span>
                                                 4 ciclos
                                             </span>
@@ -118,7 +123,7 @@
                                     Voltar
                                 </span>
                             </button>
-                            <button id="iniciarAspersorIndiv" onclick="enviarComando()" class="botao">
+                            <button id="iniciarAspersorIndiv" onclick="fecharPainel(id)" class="botao">
                                 <span>
                                     Iniciar
                                 </span>
@@ -128,9 +133,6 @@
                 </div>
                 <div id="janelaSelectAspersorIndiv" class="sub popup">
                     <div class="content">
-                        <div class="tituloJanela">
-                            Seus favoritos:
-                        </div>
                         <div class="inputPopup">
                             <ul id="aspList" class="buttonList">
                             </ul>
@@ -236,13 +238,25 @@
                 <h1 class="tituloJanela">
                     Configuracoes
                 </h1>
-                <div class="subtitulo">
-                    texto
+                <div class="inputPopup">
+                    <div>
+                        <span style="color: black;">Código:</span>
+                        <input id="coodigoNomeAspersor" type="text" placeholder="codigo do aspersor">
+                    </div>
+                    <div>
+                        <span style="color: black;">Nome:</span>
+                        <input id="configNomeAspersor" type="text" placeholder="nome do aspersor">
+                    </div>
                 </div>
                 <div class="botoes">
                     <button id="fecharConfiguracoes" onclick="fecharPainel(id)" class="botao">
                         <span>
                             Voltar
+                        </span>
+                    </button>
+                    <button id="enviarConfiguracoes" onclick="fecharPainel(id)" class="botao">
+                        <span>
+                            Enviar
                         </span>
                     </button>
                 </div>
