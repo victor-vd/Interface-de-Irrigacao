@@ -251,6 +251,13 @@ body {
         --ciano: #62db78;
         transition: --verde 0.1s, --ciano 0.1s;
     }
+
+    .checked {
+        box-shadow: inset 0px 4px 12px -4px black;
+        --verde: #61D057;
+        --ciano: #62db78;
+        transition: --verde 0.1s, --ciano 0.1s;
+    }
 }
 
 /* Estilização da janela de pop-up */

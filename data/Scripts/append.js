@@ -1,17 +1,23 @@
-import asp from '../Models/Aspersores.json' with  { type: 'json' };
-console.log(`coisas: ${asp.Apersores.length}`);
+import aspJson from '../Models/Aspersores.json' with  { type: 'json' };
+
+// mostrarAspersores();
 
 document.querySelector("#aspList").innerHTML = appendAsp();
 
-console.log(document.querySelector("#aspList").innerHTML);
+// console.log(document.querySelector("#aspList").innerHTML);
 
 function appendAsp() {
     let appendCode = "";
 
-    for (let i = 0; i < asp.Apersores.length; i++) {
-        appendCode += `<button id="asp${asp.Apersores[i].codigo}" class="botao"><span>${textCaptilizer(asp.Apersores[i].nome)}</span></button>\n`;
+    for (let i = 0; i < aspJson.Apersores.length; i++) {
+        appendCode += `
+        <button id="asp${aspJson.Apersores[i].codigo}" class="botao botaoSelectApersor">
+            <span>
+                ${textCaptilizer(aspJson.Apersores[i].nome)} (${aspJson.Apersores[i].codigo})
+            </span>
+        </button>`;
     }
-    console.log(appendCode);
+
     return appendCode;
 }
 
@@ -33,4 +39,19 @@ function textCaptilizer(textInput) {
         textInput += i == wordNumber - 1 ? strings[i] : strings[i] + ' ';
     }
     return textInput;
+}
+
+function mostrarAspersores() {
+    console.log(`Quantidade de Apersores: ${aspJson.Apersores.length}`);
+    console.log(`Aspersores.json:`);
+
+    let consoleAspersor = "";
+
+    for (let i = 0; i < aspJson.Apersores.length; i++) {
+        consoleAspersor += `
+            Aspersor ${i + 1}: 
+                códido: ${aspJson.Apersores[i].codigo}
+                nome: ${aspJson.Apersores[i].nome}`;
+    }
+    console.log(consoleAspersor);
 }
