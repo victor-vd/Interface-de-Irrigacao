@@ -99,24 +99,28 @@ void setup() {
     request->send(SPIFFS, "/Scripts/script.js", "text/javascript;charset=UTF-8");
   });
 
-  //Rota que recebe e printa o comando no serial
+  // Rota que recebe e printa o comando no serial
   server.on("/comando",HTTP_GET,[](AsyncWebServerRequest* request){
     int params = request->params();
     for(int i=0;i<params;i++){
       AsyncWebParameter* p = request->getParam(i);
         Serial.printf("GET[%s]: %s\n", p->name().c_str(), p->value().c_str());
     }
-    Serial.println("saiu do loop ");
+    Serial.println("saiu do loop");
     request->send(200);
   });
 
-
-  //Desligar tudo
+  // Imprime o comando dos aspersores
+  server.on("/comando-aspersor",HTTP_GET,[](AsyncWebServerRequest* request){
+    Serial.println(server.args());
+    request->send(200);
+  });
+  // Desligar tudo
   server.on("/desligar-tudo",HTTP_GET,[](AsyncWebServerRequest* request){
     Serial.println("Z");
     request->send(200);
   });
-  //Ativar ciclo diário
+  // Ativar ciclo diário
   server.on("/ciclo-diario",HTTP_GET,[](AsyncWebServerRequest* request){
     Serial.println("I");
     request->send(200);

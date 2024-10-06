@@ -1,6 +1,7 @@
 const ENDEREÇO = {
     "URLPagina": `../`,
     "URLComando": `../comando?`,
+    "URLComando": `../comando-aspersor?`,
     "URLDesligarTudo": `../desligar-tudo`,
     "URLCicloDiario": `../ciclo-diario`
 }
@@ -115,6 +116,15 @@ function limparCampos() {
 
 
 /* Seção de comandos da controladora */
+
+// function enviarComando() {
+//     let nomeAspesor = document.getElementById('nomeAspersor').value;
+//     let cicloAspersor = document.getElementById('cicloAspersor').value;
+//     fetch(`${ENDEREÇO.URLComando}nomeAspesor=${nomeAspesor}&cicloAspersor=${cicloAspersor}`)
+//         .then(
+//             alert("Comando enviado.")
+//         );
+// }
 
 // Ativa os aspersores selecionados pelo número de ciclos escolhido quando o usuário confirma
 function ativarAspersor(comandoApersores, selectedCiclos) {
