@@ -11,22 +11,14 @@
 
 <body>
     <nav class="navbar">
-        <a href="index.html"><img class="imagem" src="./Imagens/logoIrriga64.png" alt=""></a>
         <div class="titulo">
             <span>
-                I-RRIGA
+                E-RRIGA
             </span>
         </div>
-        <span class="imagem"></span>
     </nav>
     <div class="imagem grande">
     </div>
-
-    <!-- <div class="titulo">
-        <span>
-            Painel Principal
-        </span>
-    </div> -->
 
     <div class="botoesPainel" id="botoesPainel">
         <div class="botoesColuna1">
@@ -73,41 +65,41 @@
                         </div>
                         -->
                         <div class="inputPopup">
-                            <div>
-                                <span>Nome do Aspersor:</span>
+                            <div class="inputField">
+                                <span class="inputName">Nome do Aspersor:</span>
                                 <button id="nomeAspersor" onclick="botaoSubPainel(id)" class="botao">
                                     <span>Selecionar</span>
                                 </button>
                             </div>
-                            <div>
-                                <span>Número de ciclos:</span>
-                                <nav id="menuDropdown" class="dropdown" onmouseout="fecharDropdown(id)">
+                            <div class="inputField">
+                                <span class="inputName">Número de ciclos:</span>
+                                <nav id="menuAspDropdown" class="dropdown" onmouseout="fecharDropdown(id)">
                                     <button class="dropdown botao" onmouseover="menuDropdown(id)" id="cicloAsp">
                                         <span>
                                             Selecionar
                                         </span>
                                     </button>
-                                    <ul id="cicloDropdown" class="dropdown container" onmouseover="menuDropdownOpen(id)"
-                                        style="display: none;">
-                                        <li id="ciclo1" class="numeroInput selectCiclo"
+                                    <ul id="cicloAspDropdown" class="dropdown container"
+                                        onmouseover="menuDropdownOpen(id)" style="display: none;">
+                                        <li id="aspCiclo1" class="numeroInput selectCiclo selectCicloAsp"
                                             onclick="selectFecharDropdown(id)">
                                             <span>
                                                 1 ciclo
                                             </span>
                                         </li>
-                                        <li id="ciclo2" class="numeroInput selectCiclo"
+                                        <li id="aspCiclo2" class="numeroInput selectCiclo selectCicloAsp"
                                             onclick="selectFecharDropdown(id)">
                                             <span>
                                                 2 ciclos
                                             </span>
                                         </li>
-                                        <li id="ciclo3" class="numeroInput selectCiclo"
+                                        <li id="aspCiclo3" class="numeroInput selectCiclo selectCicloAsp"
                                             onclick="selectFecharDropdown(id)">
                                             <span>
                                                 3 ciclos
                                             </span>
                                         </li>
-                                        <li id="ciclo4" class="numeroInput selectCiclo"
+                                        <li id="aspCiclo4" class="numeroInput selectCiclo selectCicloAsp"
                                             onclick="selectFecharDropdown(id)">
                                             <span>
                                                 4 ciclos
@@ -170,12 +162,56 @@
                 <div id="janelaRotinaTeste" class="popup">
                     <div class="content">
                         <div class="tituloJanela">
-                            texto
+                            Selecione os ciclos do Teste
+                        </div>
+                        <div class="inputPopup">
+                            <div class="inputField">
+                                <span>Número de ciclos:</span>
+                                <nav id="menuTestDropdown" class="dropdown" onmouseout="fecharDropdown(id)">
+                                    <button class="dropdown botao" onmouseover="menuDropdown(id)" id="cicloTest">
+                                        <span>
+                                            Selecionar
+                                        </span>
+                                    </button>
+                                    <ul id="cicloTesteDropdown" class="dropdown container"
+                                        onmouseover="menuDropdownOpen(id)" style="display: none;">
+                                        <li id="TestCiclo1" class="numeroInput selectCiclo selectCicloTest"
+                                            onclick="selectFecharDropdown(id)">
+                                            <span>
+                                                1 ciclo
+                                            </span>
+                                        </li>
+                                        <li id="TestCiclo2" class="numeroInput selectCiclo selectCicloTest"
+                                            onclick="selectFecharDropdown(id)">
+                                            <span>
+                                                2 ciclos
+                                            </span>
+                                        </li>
+                                        <li id="TestCiclo3" class="numeroInput selectCiclo selectCicloTest"
+                                            onclick="selectFecharDropdown(id)">
+                                            <span>
+                                                3 ciclos
+                                            </span>
+                                        </li>
+                                        <li id="TestCiclo4" class="numeroInput selectCiclo selectCicloTest"
+                                            onclick="selectFecharDropdown(id)">
+                                            <span>
+                                                4 ciclos
+                                            </span>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
                         </div>
                         <div class="botoes">
                             <button id="fecharRotinaTeste" onclick="fecharPainel(id)" class="botao">
                                 <span>
                                     Voltar
+                                </span>
+                            </button>
+                            <button id="iniciarRotinaTeste" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Iniciar
                                 </span>
                             </button>
                         </div>
@@ -213,13 +249,36 @@
                 </button>
                 <div id="janelaInfoSistema" class="popup">
                     <div class="content">
-                        <div class="tituloJanela">
-                            texto
+                        <div class="statusContainer">
+                            <span class="statusText">
+                                Lorem ipsum dolostrum voluptates, ratione similique saepe praesentium totam ex
+                                ipsa numquam officit amet consectetur adipisicing elit. Rsaepe praesentium totam ex
+                                ipsa numquam officia eum rerum diium suscipit nostrum voluptates, ratione similique
+                                saepe praesentium totam ex
+                                ipsa numquam officit amet consecttates, ratione similique saepe praesentium totam ex
+                                ipsa numquam officia eum rerum dietur adipisicing elit. Repepellat delectus dolore
+                                laudantium suscipit nor sit amet consectetur adipisicing elit. Repellat delectus dolore
+                                laudantet consecttates, ratione similique saepe praesentium totam ex
+                                ipsa numquam officia eum rerum dietur adipisicing elit. Repellat delectus dolore
+                                laudantium suscipit nostrum voluptates, ratione similique saepe praesentium totam ex
+                                ipsa numquam officia eum rerum diium suscipit nostrum voluptates, ratione similique
+                                saepe praesentium totam ex
+                                ipsa numquam officit amet consecttates, ratione similique saepe praesentium totam ex
+                                ipsa numquam officia eum rerum dietur adipisicing elit. Repellat delectus dolore
+                                laudantium suscipit nostrum voluptates, ratione similique saepe praesentium totam ex
+                                ipsa numquam officia eum rerum dium distinctio inventore atque iure?inctio inventore
+                                atque iure?
+                            </span>
                         </div>
                         <div class="botoes">
                             <button id="fecharInfoSistema" onclick="fecharPainel(id)" class="botao">
                                 <span>
                                     Voltar
+                                </span>
+                            </button>
+                            <button id="iniciarInfoSistema" onclick="fecharPainel(id)" class="botao">
+                                <span>
+                                    Status
                                 </span>
                             </button>
                         </div>

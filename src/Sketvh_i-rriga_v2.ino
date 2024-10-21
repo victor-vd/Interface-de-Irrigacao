@@ -72,42 +72,56 @@ void setup()
   server.on("/Imagens/settingsWhite64.png", HTTP_GET, [](AsyncWebServerRequest *request)
             { request->send(SPIFFS, "/Imagens/settingsWhite64.png", "image/png"); });
   server.on("/Fontes/asapvariable1.woff", HTTP_GET, [](AsyncWebServerRequest *request)
-            { request->send(SPIFFS, "	/Fontes/asapvariable1.woff", "text/css"); });
+            { request->send(SPIFFS, "/Fontes/asapvariable1.woff", "text/css"); });
   server.on("/Fontes/asapvariable2.woff2", HTTP_GET, [](AsyncWebServerRequest *request)
             { request->send(SPIFFS, "/Fontes/asapvariable2.woff2", "text/css"); });
 
   // Rotas para arquivos javaScript
   server.on("/Scripts/window.js", HTTP_GET, [](AsyncWebServerRequest *request)
             { request->send(SPIFFS, "/Scripts/window.js", "text/javascript;charset=UTF-8"); });
+  server.on("/Scripts/append.js", HTTP_GET, [](AsyncWebServerRequest *request)
+            { request->send(SPIFFS, "/Scripts/append.js", "text/javascript;charset=UTF-8"); });
   server.on("/Scripts/script.js", HTTP_GET, [](AsyncWebServerRequest *request)
             { request->send(SPIFFS, "/Scripts/script.js", "text/javascript;charset=UTF-8"); });
 
-  // Rota que recebe e printa o comando no serial
-  server.on("/comando", HTTP_GET, [](AsyncWebServerRequest *request)
-            {
-    int params = request->params();
-    for(int i=0;i<params;i++){
-      AsyncWebParameter* p = request->getParam(i);
-        Serial.printf("GET[%s]: %s\n", p->name().c_str(), p->value().c_str());
-    }
-    Serial.println("saiu do loop");
-    request->send(200); });
+  // Rota para arquivos JSON
+  server.on("/Models/Aspersores.json", HTTP_GET, [](AsyncWebServerRequest *request)
+            { request->send(SPIFFS, "/Models/Aspersores.json", "application/json;charset=UTF-8"); });
 
   // Imprime o comando dos aspersores
   server.on("/comando-aspersor", HTTP_GET, [](AsyncWebServerRequest *request)
             {
-    Serial.println(request->args());
-    request->send(200); });
+              int params = request->params();
+              for (int i = 0; i < params; i++)
+              {
+                AsyncWebParameter *p = request->getParam(i);
+                Serial.println(p->name().c_str());
+              }
+              request->send(200); });
+  // Imprime o comando da rotina de teste
+  server.on("/rotina-teste", HTTP_GET, [](AsyncWebServerRequest *request)
+            {
+              int params = request->params();
+              for (int i = 0; i < params; i++)
+              {
+                AsyncWebParameter *p = request->getParam(i);
+                Serial.println(p->name().c_str());
+              }
+              request->send(200); });
   // Desligar tudo
   server.on("/desligar-tudo", HTTP_GET, [](AsyncWebServerRequest *request)
             {
-    Serial.println("Z");
-    request->send(200); });
+              Serial.println("Z");
+              request->send(200); });
   // Ativar ciclo diário
   server.on("/ciclo-diario", HTTP_GET, [](AsyncWebServerRequest *request)
             {
-    Serial.println("I");
-    request->send(200); });
+              Serial.println("I");
+              request->send(200); });
+  server.on("/retornar-status", HTTP_GET, [](AsyncWebServerRequest *request)
+            {
+              Serial.println("S");
+              request->send(200); });
   // 404
   server.onNotFound([](AsyncWebServerRequest *request)
                     { request->send(404); });

@@ -1,7 +1,8 @@
 const ENDEREÇO = {
     "URLPagina": `../`,
-    "URLComando": `../comando?`,
     "URLComando": `../comando-aspersor?`,
+    "URLInfoSistema": `../retornar-status`,
+    "URLRotinaTeste": `../rotina-teste?`,
     "URLDesligarTudo": `../desligar-tudo`,
     "URLCicloDiario": `../ciclo-diario`
 }
@@ -10,11 +11,17 @@ const selectedAsp = [];
 
 const botoesAsp = document.getElementsByClassName(`botaoSelectApersor`);
 
-const selectCiclos = document.getElementsByClassName(`selectCiclo`);
+const selectCiclosAsp = document.getElementsByClassName(`selectCiclo selectCicloAsp`);
+
+const selectCiclosTest = document.getElementsByClassName(`selectCiclo selectCicloTest`);
 
 const maxCiclosAsp = 4;
 
-let selectedCiclos = null;
+// Quantidade de ciclos da ativação de aspersor individual
+let selectedCiclosAsp = 0;
+
+// Quantidade de ciclos da rotina de teste
+let selectedCiclosTest = 0;
 
 console.log(botoesAsp.length);
 
@@ -37,9 +44,13 @@ for (let i = 0; i < botoesAsp.length; i++) {
 
 // Recolhe o número de ciclos dos elementos selecionados
 for (let i = 0; i < maxCiclosAsp; i++) {
-    selectCiclos[i].addEventListener("click", e => {
-        selectedCiclos = getId(selectCiclos[i]);
-        console.log(selectedCiclos);
+    selectCiclosAsp[i].addEventListener("click", e => {
+        selectedCiclosAsp = getId(selectCiclosAsp[i]);
+        console.log("selectedCiclosAsp: " + selectedCiclosAsp);
+    });
+    selectCiclosTest[i].addEventListener("click", e => {
+        selectedCiclosTest = getId(selectCiclosTest[i]);
+        console.log("selectedCiclosTest: " + selectedCiclosTest);
     });
 }
 
@@ -64,17 +75,6 @@ document.querySelector("#fecharAspersorIndiv").addEventListener("click", e => {
 document.querySelector("#confirmarAspersorIndiv").addEventListener("click", e => {
     selectedAsp.sort();
     console.log(selectedAsp);
-});
-
-// Forma o comando que será enviado para a controladora
-document.querySelector("#iniciarAspersorIndiv").addEventListener("click", e => {
-    let comandoApersores = "";
-
-    for (let i = 0; i < selectedAsp.length; i++) {
-        comandoApersores += selectedAsp[i] + selectedCiclos;
-    }
-
-    ativarAspersor(comandoApersores, selectedCiclos);
 });
 
 // Limpa os campos de input ao fechar a janela
@@ -108,48 +108,49 @@ window.addEventListener("click", function (event) {
 // Limpa todos os campos de input da interface
 function limparCampos() {
     selectedAsp.splice(0, selectedAsp.length);
-    selectedCiclos = 0;
-    console.log(selectedAsp, selectedCiclos);
+    selectedCiclosAsp = 0;
+    selectedCiclosTest = 0;
+    console.log(selectedAsp, selectedCiclosAsp);
     //console.clear();
 }
 
+// Forma o comando de ativação dos aspersores individuais
+document.querySelector("#iniciarAspersorIndiv").addEventListener("click", e => {
 
+    console.log(selectedCiclosAsp);
 
-/* Seção de comandos da controladora */
-
-// function enviarComando() {
-//     let nomeAspesor = document.getElementById('nomeAspersor').value;
-//     let cicloAspersor = document.getElementById('cicloAspersor').value;
-//     fetch(`${ENDEREÇO.URLComando}nomeAspesor=${nomeAspesor}&cicloAspersor=${cicloAspersor}`)
-//         .then(
-//             alert("Comando enviado.")
-//         );
-// }
-
-// Ativa os aspersores selecionados pelo número de ciclos escolhido quando o usuário confirma
-function ativarAspersor(comandoApersores, selectedCiclos) {
+    let comandoApersores = "";
     let mensagemPopup = "";
 
-    // Construção da mensagem do popup da interface após o comando ser executado
     for (let i = 0; i < selectedAsp.length; i++) {
-        if (selectedAsp.length == 1) {
-            mensagemPopup += `O Aspersor ${selectedAsp[i].toUpperCase()} foi ativado com sucesso com duração de ${selectedCiclos} ciclos.`;
-        } else if (i == selectedAsp.length - 1) {
-            mensagemPopup += `e Aspersor ${selectedAsp[i].toUpperCase()} foram ativados com sucesso com duração de ${selectedCiclos} ciclos.`;
-        } else {
-            mensagemPopup += `Aspersor ${selectedAsp[i].toUpperCase()}, `;
-        }
+        comandoApersores += selectedAsp[i] + selectedCiclosAsp;
     }
 
-    //console.log(mensagemPopup);
-    //console.log(comandoApersores);
+    if (selectedCiclosAsp != 0 && selectedCiclosAsp != null && comandoApersores != "") {
 
-    fetch(`${ENDEREÇO.URLComando}${comandoApersores}`)
-        .then(
-            alert(`${mensagemPopup}`)
-        );
+        // Construção da mensagem do popup da interface após o comando ser executado
+        for (let i = 0; i < selectedAsp.length; i++) {
+            if (selectedAsp.length == 1) {
+                mensagemPopup += `O Aspersor ${selectedAsp[i].toUpperCase()} foi ativado com sucesso com duração de ${selectedCiclosAsp} ciclos.`;
+            } else if (i == selectedAsp.length - 1) {
+                mensagemPopup += `e Aspersor ${selectedAsp[i].toUpperCase()} foram ativados com sucesso com duração de ${selectedCiclosAsp} ciclos.`;
+            } else {
+                mensagemPopup += `Aspersor ${selectedAsp[i].toUpperCase()}, `;
+            }
+        }
+
+        console.log(mensagemPopup);
+        console.log(comandoApersores);
+
+        fetch(`${ENDEREÇO.URLComando}${comandoApersores}`)
+            .then(
+                alert(`${mensagemPopup}`)
+            );
+    } else {
+        alert(`Campos inválidos. Valor de ciclos = "${selectedCiclosAsp}". Comando = "${comandoApersores}"`);
+    }
     limparCampos();
-}
+});
 
 // Desativa o funcionamento do sistema
 document.querySelector("#desativa").addEventListener("click", e => {
@@ -166,36 +167,29 @@ document.querySelector("#iniciarCicloDiario").addEventListener("click", e => {
             alert("Todos os sensores foram lidos. O ciclo diário foi inciado.")
         );
 });
+
+// Retorna o status atual da controladora
+document.querySelector("#iniciarInfoSistema").addEventListener("click", e => {
+    fetch(`${ENDEREÇO.URLInfoSistema}`)
+        .then(
+            alert("As informações do sistema já estão disponíveis para consulta.")
+        );
+});
+
+// Forma o comando que será enviado para a controladora
+document.querySelector("#iniciarRotinaTeste").addEventListener("click", e => {
+    if (selectedCiclosTest != null && selectedCiclosTest != 0) {
+        fetch(`${ENDEREÇO.URLRotinaTeste}T${selectedCiclosTest}`)
+            .then(
+                alert(`T${selectedCiclosTest}`)
+            );
+        console.log(`T${selectedCiclosTest}"`);
+    } else {
+        alert(`Campos inválidos. Valor de ciclos = "${selectedCiclosTest}"`)
+    }
+    limparCampos();
+});
+
 // Para fazer:
 // Testar com 2 inputs
 // Exemplo: `${ENDEREÇO.URLPagina}?I?02`
-
-
-
-// Imprime o comando atual no console
-// console.log(window.location.href.split("?")[1]);
-
-// Inicia o ciclo de irrigação diário quando o usuário confirma
-// document.querySelector("#iniciarCicloDiario").addEventListener("click", e => {
-//     comandoCliente = "I";
-//     window.location.href = `${ENDEREÇO.URLPagina}?${comandoCliente}`;
-//     ativarAspersor(comandoServidor);
-// });
-
-// Se o nome do aspersor for válido e o número de ciclos for entre
-// 1 e 4, aciona o apersor desejado, tendo como base os nomes
-// Definidos pelo usuário
-// document.querySelector("#acionarAspersorIndiv").addEventListener("click", e => {
-//     const cicloAspersor = document.querySelector("#cicloAspersor")
-//     if(cicloAspersor.value <= 4 && cicloAspersor.value >= 1){
-//         comandoCliente = Aspersores.get(document.querySelector("#nomeAspersor").value) + `${cicloAspersor.value}`;
-//         console.log(Aspersores.get(document.querySelector("#nomeAspersor").value));
-//     } else {
-//         comandoCliente = "erro";
-//     };
-//     ativarAspersor(comandoCliente);
-//     window.location.href = `${ENDEREÇO.URLPagina}?${comandoCliente}`;
-// });
-
-// Se o input do usuário for inválido, envia uma mensagem de erro
-// E logo em seguida, recarrega a página
