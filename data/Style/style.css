@@ -78,7 +78,7 @@ body {
         span {
             color: white;
             font-size: 32px;
-            text-shadow: 1px 2px 4px rgb(30, 30, 30);
+            text-shadow: 1px 1px 4px rgb(30, 30, 30);
         }
     }
 }
@@ -90,7 +90,7 @@ body {
     flex-direction: row;
     margin: 64px auto 32px auto;
     font-size: 36px;
-    text-shadow: 1px 2px 4px rgb(213, 213, 213);
+    text-shadow: 1px 1px 4px rgb(213, 213, 213);
     color: #11d000;
 }
 
@@ -101,7 +101,7 @@ body {
     flex-direction: row;
     margin: 16px auto 64px auto;
     font-size: 24px;
-    text-shadow: 1px 2px 4px rgb(185, 185, 185);
+    text-shadow: 1px 1px 4px rgb(185, 185, 185);
     color: black;
 
 }
@@ -112,13 +112,7 @@ body {
     flex-direction: row;
     justify-content: center;
 
-    .botoesColuna1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: auto 16px;
-    }
-
+    .botoesColuna1,
     .botoesColuna2 {
         display: flex;
         flex-direction: column;
@@ -186,7 +180,8 @@ body {
             margin: auto 42px auto 0px;
         }
 
-        &#botaoRotinaTeste {
+        &#botaoRotinaTeste,
+        &#botaoInfoSistema {
             span {
                 margin: auto 60px auto 0px;
             }
@@ -201,12 +196,6 @@ body {
         &#botaoLigaTorneira {
             span {
                 margin: auto 56px auto 0px;
-            }
-        }
-
-        &#botaoInfoSistema {
-            span {
-                margin: auto 64px auto 0px;
             }
         }
     }
@@ -289,7 +278,7 @@ body {
             font-size: 28px;
             margin: 32px auto 32px auto;
             text-align: center;
-            text-shadow: 1px 2px 4px rgb(193, 193, 193);
+            text-shadow: 1px 1px 4px rgb(193, 193, 193);
             color: #0fb900;
         }
 

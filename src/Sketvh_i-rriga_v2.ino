@@ -11,10 +11,13 @@
 #include "WiFi.h"
 #include "ESPAsyncWebServer.h"
 #include "SPIFFS.h"
+#include "ArduinoJson.h"
+#include "nlohmann/json.hpp"
+#include "fstream"
 
 // Replace with your network credentials
-const char *ssid = "";
-const char *password = "";
+const char *ssid = "NET_2G12A8F9";
+const char *password = "D012A8F9";
 
 // Create AsyncWebServer object on port 80
 AsyncWebServer server(80);
@@ -30,6 +33,28 @@ void setup()
     Serial.println("An Error has occurred while mounting SPIFFS");
     return;
   }
+
+  std::ofstream fileToWrite;
+
+  fileToWrite.open("/Models/test.json");
+
+  fileToWrite << R"(
+    {
+      "x": 20,
+      "str": "test"
+    }
+  )";
+
+  fileToWrite.close();
+
+  std::ifstream fileToRead("/Models/test.json");
+
+  nlohmann::json obj;
+
+  fileToRead >> obj;
+
+  Serial.println(obj["x"].get<int>());
+  Serial.println(obj["str"].get<std::string>().c_str());
 
   // Connect to Wi-Fi
   WiFi.begin(ssid, password);
@@ -87,6 +112,8 @@ void setup()
   // Rota para arquivos JSON
   server.on("/Models/Aspersores.json", HTTP_GET, [](AsyncWebServerRequest *request)
             { request->send(SPIFFS, "/Models/Aspersores.json", "application/json;charset=UTF-8"); });
+  server.on("/Models/Aspersores.json", HTTP_GET, [](AsyncWebServerRequest *request)
+            { request->send(SPIFFS, "/Models/test.json", "application/json;charset=UTF-8"); });
 
   // Imprime o comando dos aspersores
   server.on("/comando-aspersor", HTTP_GET, [](AsyncWebServerRequest *request)
